@@ -1,0 +1,125 @@
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: 50px;
+}
+.gopage{
+    margin-right: 200px;
+}
+.navbar-nav .nav-link {
+    color: white !important;
+}
+
+.text-start{
+    width: 580px;
+    margin-left: 120px;
+    padding-right: 80px;
+}
+.navp {
+    margin-right: 0px;
+}
+.titleshop {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 550px;
+    margin-left: 450px;
+}
+.banner {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+.banner-image{
+    margin-left: 50px;
+    max-width: 2000px;
+    max-height: 485px;
+    object-fit: cover;
+}
+.banner-text h1 {
+    font-size: 58px;
+    font-weight: bold;
+    border-style: solid;
+    padding: 10px;
+    border-width: 4px;
+    display: inline-block;
+}
+.banner-text .sale {
+    background-color: black;
+    letter-spacing: 2px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 44px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.banner {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+}
+.banner h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.banner .website {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 5px;
+    margin-right: 150px;
+}
+.banner .brand {
+    font-size: 48px;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.banner .sale {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.welcome {
+    margin-right: 350px;
+}
+.banner .stars {
+    font-size: 32px;
+    color: #000000;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 250px;
+}
+.banner p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+.banner .btn-order {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.banner .btn-order:hover {
+    background-color: #333;
+}
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+.footer a {
+    color: #ddd;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: white;
+}
