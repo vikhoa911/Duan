@@ -40,7 +40,7 @@
             <button class="gopage btn btn-dark">Đặt Hàng Ngay!!</button>
         </div>
         <div class="banner-image">
-            <img src="/images/banner.jpg" alt="Fashion Model" class="img-fluid shadow">
+            <img src="images/banner.jpg" alt="Fashion Model" class="img-fluid shadow">
         </div>
     </div>
 </section>
