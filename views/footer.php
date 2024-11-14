@@ -40,7 +40,8 @@
                 </div>                
             </div>
         </div>
-        <div class="text-center mt-4">
+        <hr>
+        <div class="text-center">
             <p>&copy; 2023 Vask All Rights Reserved.</p>
         </div>
     </div>

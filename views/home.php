@@ -17,7 +17,7 @@
                     <a class="navbar-brand titleshop" href="#">VASK STORE</a>
                     <ul class="navbar-nav navp">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-user-plus"></i></a>
+                        <a class="nav-link" href="views/taikhoan/login.php"><i class="fas fa-user"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -40,7 +40,7 @@
             <button class="gopage btn btn-dark">Đặt Hàng Ngay!!</button>
         </div>
         <div class="banner-image">
-            <img src="/images/banner.jpg" alt="Fashion Model" class="img-fluid shadow">
+            <img src="./images/banner.jpg" alt="Fashion Model" class="img-fluid shadow">
         </div>
     </div>
 </section>
