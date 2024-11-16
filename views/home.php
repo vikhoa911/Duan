@@ -17,7 +17,7 @@
                     <a class="navbar-brand titleshop" href="#">VASK STORE</a>
                     <ul class="navbar-nav navp">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-user-plus"></i></a>
+                        <a class="nav-link" href="views/taikhoan/login.php"><i class="fas fa-user"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i></a>
