@@ -41,7 +41,7 @@
     </nav>
     <!-- Search -->
     <div class="search">
-        <h3 class="titlsearch">Danh sách sản phẩm</h3>
+        <h3 class="titlesearch">Danh sách sản phẩm</h3>
         <input type="text" placeholder="Tìm kiếm đơn hàng...">
         <i class="fa-solid fa-magnifying-glass mt-3 m-lg-3"></i>
     </div>
@@ -64,7 +64,7 @@
                     <td>Áo thun đen</td>
                     <td><img src="/images/aothunden.jpg" alt="Áo thun đen"></td>
                     <td>10</td>
-                    <td><a href="#"><button id="orderButton" class="pending" onclick="changeStatus()">Đã giao hàng thành công</button> </a></td>
+                    <td><a href="#"><button type="button" class="btn btn-success">Đã giao hàng thành công</button> </a></td>
                     <td>
                         <a href="#"><button class="mualai">Mua lại</button></a>
                         
@@ -75,7 +75,7 @@
                     <td>Áo thun đen</td>
                     <td><img src="/images/aothunden.jpg" alt="Áo thun đen"></td>
                     <td>10</td>
-                    <td><a href="#"><button id="orderButton" class="pending" onclick="changeStatus()">Đang giao hàng</button> </a></td>
+                    <td><a href="#"><button type="button" class="btn btn-warning">Đang giao hàng</button> </a></td>
                     <td>
                         <a href="#"><button class="mualai">Mua lại</button></a>
                         
@@ -86,7 +86,7 @@
                     <td>Áo thun đen</td>
                     <td><img src="/images/aothunden.jpg" alt="Áo thun đen"></td>
                     <td>10</td>
-                    <td><a href="#"><button id="orderButton" class="pending" onclick="changeStatus()">Đã hủy</button> </a></td>
+                    <td><a href="#"><button type="button" class="btn btn-danger">Đã hủy</button> </a></td>
                     <td>
                         <a href="#"><button class="mualai">Mua lại</button></a>
                         
@@ -97,7 +97,7 @@
                     <td>Áo thun đen</td>
                     <td><img src="/images/aothunden.jpg" alt="Áo thun đen"></td>
                     <td>10</td>
-                    <td><a href="#"><button id="orderButton" class="pending" onclick="changeStatus()">Chưa xác nhận</button> </a></td>
+                    <td><a href="#"><button type="button" class="btn btn-secondary">Chưa xác nhận</button> </a></td>
                     <td>
                         <a href="#"><button class="mualai">Mua lại</button></a>
                         
@@ -110,6 +110,68 @@
             
         </table>
     </div>
+    <!-- Sản phẩm liên quan -->
+    <h3 class="titlelienquan"><button></button>   Sản phẩm liên quan</h3>
+    <div class="product-container">   
+        
+        <div class="product-box">  
+            <div class="product-image">  
+                <a href="#"><img src="/images/aogc.jfif" alt="Leviosa Chair"></a>
+            </div>  
+            <div class="product-details">  
+                <h3>Áo GUCCI</h3>  
+                <p>VASK STORE</p>  
+                <span class="price">2.500.000đ</span>  
+                <div class="buttons">  
+                    <button class="add-to-cart">Add to cart</button>  
+                      
+                </div>  
+            </div>  
+        </div> 
+        <div class="product-box">  
+            <div class="product-image">  
+                <a href="#"><img src="/images/aogc.jfif" alt="Leviosa Chair"></a>
+            </div>  
+            <div class="product-details">  
+                <h3>Áo GUCCI</h3>  
+                <p>VASK STORE</p> 
+                <span class="price">2.500.000đ</span>  
+                <div class="buttons">  
+                    <button class="add-to-cart">Add to cart</button>  
+                     
+                </div>  
+            </div>  
+        </div>
+        <div class="product-box">  
+            <div class="product-image">  
+                <a href="#"><img src="/images/aogc.jfif" alt="Leviosa Chair"></a> 
+            </div>  
+            <div class="product-details">  
+                <h3>Áo GUCCI</h3>  
+                <p>VASK STORE</p>  
+                <span class="price">2.500.000đ</span>  
+                <div class="buttons">  
+                    <button class="add-to-cart">Add to cart</button>  
+                    
+                </div>  
+            </div>  
+        </div>
+        <div class="product-box">  
+            <div class="product-image">  
+                <a href="#"><img src="/images/aogc.jfif" alt="Leviosa Chair"></a> 
+            </div>  
+            <div class="product-details">  
+                <h3>Áo GUCCI</h3>  
+                <p>VASK STORE</p>  
+                <span class="price">2.500.000đ</span>  
+                <div class="buttons">  
+                    <button class="add-to-cart">Add to cart</button>  
+                    
+                </div>  
+            </div>  
+        </div> 
+    </div>
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -159,22 +221,5 @@
     
     
 </body>
-<script>
-    let statusIndex = 0; // Chỉ số trạng thái  
-    const statuses = [  
-        { text: "Chưa xác nhận", className: "pending" },  
-        { text: "Đang giao hàng", className: "in-progress" },  
-        { text: "Đã giao thành công", className: "success" },  
-        { text: "Đã hủy", className: "canceled" }  
-    ];  
 
-    function changeStatus() {  
-        statusIndex = (statusIndex + 1) % statuses.length; // Chuyển đến trạng thái tiếp theo  
-        const currentStatus = statuses[statusIndex];  
-
-        const button = document.getElementById("orderButton");  
-        button.textContent = currentStatus.text; // Thay đổi tên trạng thái  
-        button.className = currentStatus.className; // Thay đổi lớp CSS  
-    }  
-</script>
 </html>
