@@ -8,7 +8,7 @@
 }
 .navbar-nav .nav-link {
     color: white !important;
-}
+}   
 
 .text-start{
     width: 580px;
@@ -34,6 +34,7 @@
     max-height: 485px;
     object-fit: cover;
 }
+
 .banner-text h1 {
     font-size: 58px;
     font-weight: bold;
