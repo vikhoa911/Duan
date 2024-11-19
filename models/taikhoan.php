@@ -1,8 +1,8 @@
 <?php
-function dangky($email, $user, $password){
-    $sql = "INSERT INTO taikhoan (email, user, pass) VALUES ('$email', '$user', '$password')";
+include_once "models/config.php";
+function dangky($ten_dang_nhap, $email, $mat_khau) {
+    $sql = "INSERT INTO `tai_khoan` (ten_dang_nhap, email, mat_khau) VALUES ('$ten_dang_nhap', '$email', '$mat_khau');";
     pdo_execute($sql);
 }
-
 
 ?>
