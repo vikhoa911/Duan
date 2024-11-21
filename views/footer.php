@@ -40,12 +40,14 @@
                 </div>                
             </div>
         </div>
-        <div class="text-center mt-4">
+        <hr>
+        <div class="text-center">
             <p>&copy; 2023 Vask All Rights Reserved.</p>
         </div>
     </div>
 </footer>
 
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"></script>
 </body>

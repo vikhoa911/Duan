@@ -1,32 +1,30 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav white1">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">NAM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">NỮ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">KHÁC</a>
-                    </li>
-                    </ul>
-                    <a class="navbar-brand titleshop" href="#">VASK STORE</a>
-                    <ul class="navbar-nav navp">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-user-plus"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i></a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav white1">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NAM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NỮ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">KHÁC</a>
+                </li>
+            </ul>
+            <a class="navbar-brand titleshop" href="#">VASK STORE</a>
+            <ul class="navbar-nav navp">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?act=dangnhap"><i class="fas fa-user"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i></a>
+                </li>
+            </ul>
         </div>
-    </nav>
-    
+    </div>
+</nav>
+
 <section class="banner text-center">
     <div class="container d-flex align-items-center justify-content-between">
         <div class="banner-text">
