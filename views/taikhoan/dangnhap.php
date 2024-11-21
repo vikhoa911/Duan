@@ -43,7 +43,7 @@
                         </div>
                         <button class="btn btn-info btn-lg btn-block w-100 mb-4" type="submit" name="dangnhap">Đăng nhập</button>
                         <br>
-                        <?php if (isset($thongbao)) echo $thongbao; ?>
+                        
 
                     </form>
                 </div>
