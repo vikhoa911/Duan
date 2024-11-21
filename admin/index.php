@@ -1,9 +1,9 @@
 <?php
+session_start();
 include "../models/config.php";
 include "../models/sanpham.php";
 include "../models/danhmuc.php";
     include "header.php";
-    //controller
 
     if(isset($_GET['act'])){
         $act=$_GET['act'];
@@ -20,7 +20,6 @@ include "../models/danhmuc.php";
                 $listdanh_muc=loadall_danh_muc();
                 include "danhmuc/hienthidm.php";
                 break;
-            /*Sản phẩm*/
             case 'themsp':
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                     $id_danh_muc = $_POST['id_danh_muc'];
