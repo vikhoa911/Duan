@@ -24,7 +24,10 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             }
             include "views/taikhoan/dangky.php"; // Hiển thị form đăng ký
             break;
-
+            case 'dangnhap':
+                
+                include "views/taikhoan/dangnhap.php"; 
+                break;
         
 
         default:

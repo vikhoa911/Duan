@@ -49,7 +49,7 @@
                     <p class="small">
                         <input type="checkbox" required> Đồng ý với điều khoản & dịch vụ
                     </p>
-                    <a href="login.html" class="text">Đã có tài khoản?</a>
+                    <a href="index.php?act=dangnhap" class="text">Đã có tài khoản?</a>
                     <?php if (isset($thongbao)) echo $thongbao; ?>
 
                 </form>
@@ -57,7 +57,7 @@
             </div>
             
             <div class="col-md-6 img-container">
-              <img src="../../images/login.jpg" alt="Login image" class="img-fluid">
+              <img src="/Duan/Duan/images/login.jpg" alt="Login image" class="img-fluid">
             </div>
           </div>
         </div>
