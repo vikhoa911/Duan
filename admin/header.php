@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMIN</title>
-    <link rel="stylesheet" href="../view/css/styles.css">
+    <title>Admin</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="../views/css/styleadmin.css">
 </head>
 <body>
-    <div class="boxcenter">
-        <div class="row mb headeradmin">
-            <h1>ADMIN</h1>
+    <!-- Header -->
+     
+        <div class="headeradmin">
+           <h1>VASK.COM.VN</h1>
         </div>
-        <div class="row mb menu">
-            <ul>
-                <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="index.php?act=hienthidm">Danh mục</a></li>
-                <li><a href="index.php?act=hienthi">Hàng hóa</a></li>
-                <li><a href="index.php?act=dskh">Khách hàng</a></li>
-                <li><a href="index.php?act=dsbl">Bình luận</a></li>
-                <li><a href="index.php?act=listbill">Đơn hàng</a></li>
-                <li><a href="index.php?act=thongke">Thống kê</a></li>
-            </ul>
-        </div>
+    <!-- Nav -->
+    <div class="menu">
+        <ul>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="index.php?act=hienthidm">Danh mục</a></li>
+            <li><a href="index.php?act=hienthi">Hàng hóa</a></li>
+            <li><a href="index.php?act=dskh">Khách hàng</a></li>
+            <li><a href="index.php?act=dsbl">Bình luận</a></li>
+            <li><a href="index.php?act=listbill">Đơn hàng</a></li>
+            <li><a href="index.php?act=thongke">Thống kê</a></li>
+        </ul>
+    </div>
