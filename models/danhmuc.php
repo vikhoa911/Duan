@@ -1,7 +1,7 @@
 <?php
 
 
-function update_danhmuc($id, $tenloai){
+function update_danh_muc($id, $tenloai){
     $sql="update danh_muc set name='$tenloai' where id=$id";
     pdo_execute($sql);
 }
