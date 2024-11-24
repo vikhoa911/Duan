@@ -13,6 +13,11 @@
                     <input type="text" name="ten_danh_muc">
                 </div>
                 <div class="row mb10">
+                    Mô tả <br>
+                    <textarea name="mo_ta"></textarea>
+                </div>
+                
+                <div class="row mb10">
                     <input type="submit" name="themmoi" value="THÊM MỚI">
                     <input type="reset" value="NHẬP LẠI">
                     <a href="index.php?act=hienthidm"><input type="button" value="DANH SÁCH"></a>

@@ -9,13 +9,42 @@ include "../models/danhmuc.php";
         $act=$_GET['act'];
         switch ($act) {
             case 'themdm':
-                if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
-                    $ten_danh_muc=$_POST['ten_danh_muc'];
-                    them_danh_muc($ten_danh_muc);
-                    $thongbao='Thêm thành công';
+                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                    $ten_danh_muc = $_POST['ten_danh_muc'];
+                    $mo_ta = isset($_POST['mo_ta']) ? $_POST['mo_ta'] : '';
+                    them_danh_muc($ten_danh_muc, $mo_ta);
+                    $thongbao = 'Thêm thành công';
                 }
+                
                 include "danhmuc/themdm.php";
                 break;
+                case 'xoadm':
+                    if (isset($_GET['id']) && ($_GET['id'])>0) {
+                        delete_danh_muc($_GET['id']);
+                        $thongbao = 'Xóa thành công';
+                    }
+                    $listdanh_muc=loadall_danh_muc();
+                    include "danhmuc/hienthidm.php";
+                    break;
+                
+                    case 'suadm':
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            $dm = loadone_danh_muc($_GET['id']);
+                        }
+                        include "danhmuc/update.php";
+                        break;
+                    
+                    case 'updatedm':
+                        if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
+                            $ten_danh_muc=$_POST['ten_danh_muc'];
+                            $mo_ta = isset($_POST['mo_ta']) ? $_POST['mo_ta'] : '';
+                            $id=$_POST['id'];
+                            update_danhmuc($id,$tenloai,$mo_ta);
+                            $thongbao='Cập nhật thành công';
+                        }
+                        $listdanhmuc=loadall_danh_muc();
+                        include "danhmuc/hienthidm.php";
+                        break;
             case 'hienthidm':
                 $listdanh_muc=loadall_danh_muc();
                 include "danhmuc/hienthidm.php";
