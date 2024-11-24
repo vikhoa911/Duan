@@ -1,7 +1,7 @@
 <main>
     <!-- Related Products Section -->
     <section class="related-products">
-        <h2>Những sản phẩm liên quan</h2>
+        <h2>Sản phẩm dành cho nam</h2>
         <div class="product-grid">
             <!-- Lấy danh sách sản phẩm thuộc danh mục "nam" -->
             <?php
@@ -41,18 +41,16 @@
             ?>
         </div>
     </section>
-
-    <!-- New Arrival Section -->
     <section class="new-arrival">
-        <h2>New Arrival</h2>
+        <h2>Nổi Bật</h2>
         <div class="collections">
             <div class="collection-item man">
-                <h3>Man's Collection</h3>
-                <button>Shop Now</button>
+                <h3>Thời Trang Nam</h3>
+                <button><a href="index.php?act=nam">Shop Now</a></button>
             </div>
             <div class="collection-item woman">
-                <h3>Woman's Collection</h3>
-                <button>Shop Now</button>
+                <h3>Thời Trang Nữ</h3>
+                <button><a href="index.php?act=nu">Shop Now</a></button>
             </div>
         </div>
     </section>
