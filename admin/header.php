@@ -17,7 +17,7 @@
            <h1>VASK.COM.VN</h1>
         </div>
     <!-- Nav -->
-    <div class="menu">
+    <div class="row mb menu">
         <ul>
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="index.php?act=hienthidm">Danh mục</a></li>
@@ -28,3 +28,7 @@
             <li><a href="index.php?act=thongke">Thống kê</a></li>
         </ul>
     </div>
+     
+    
+</body>
+</html>
