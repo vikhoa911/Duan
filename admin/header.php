@@ -21,7 +21,7 @@
         <ul>
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="index.php?act=hienthidm">Danh mục</a></li>
-            <li><a href="index.php?act=hienthi">Hàng hóa</a></li>
+            <li><a href="index.php?act=hienthisp">Hàng hóa</a></li>
             <li><a href="index.php?act=dskh">Khách hàng</a></li>
             <li><a href="index.php?act=dsbl">Bình luận</a></li>
             <li><a href="index.php?act=listbill">Đơn hàng</a></li>

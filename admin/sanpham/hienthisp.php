@@ -4,14 +4,14 @@
             </div>
             <div class="formtimkiem">
                 
-            <form action="index.php?act=listsp" method="post">
+            <form action="index.php?act=hienthisp" method="post">
                         <input type="text" name="kyw">
-                        <select name="iddm">
+                        <select name="id_danh_muc">
                             <option value="0" selected>Tất Cả</option>
                         <?php 
-                        foreach ($listdanhmuc as $danhmuc){
+                        foreach ($listdanh_muc as $danhmuc){
                             extract($danhmuc);
-                            echo '<option value="'.$id.'">'.$name.'</option>';
+                            echo '<option value="'.$id_danh_muc.'">'.$ten_danh_muc.'</option>';
                         }
                         ?>
                         </select>
@@ -33,11 +33,13 @@
                         </tr>
                         
                         <?php 
-                            foreach ($listsanpham as $sanpham) {
+                            foreach ($listsan_pham as $sanpham) {
                                 extract($sanpham);
-                                $suasp="index.php?act=suasp&id=".$id_san_pham;
-                                $xoasp="index.php?act=xoasp&id=".$id_san_pham;
-                                $hinhpath="../../images/".$hinh;
+                                $suasp="index.php?act=suasp&id_san_pham=".$id_san_pham;
+                                $xoasp="index.php?act=xoasp&id_san_pham=".$id_san_pham;
+                                $hinhpath = "../images/" . $hinh;
+                                // echo $hinhpath;
+
                                 if(is_file($hinhpath)){
                                     $hinh="<img src='" . $hinhpath . "' height='80'>";
                                 }else{
