@@ -17,10 +17,7 @@ if(is_array($dm)){
                     Tên loại <br>
                     <input type="text" name="ten_danh_muc" value="<?php if(isset($ten_danh_muc)&&$ten_danh_muc!="") echo $ten_danh_muc?>">
                 </div>
-                <div class="row mb10">
-                    Mô tả <br>
-                    <textarea name="mo_ta"><?php if(isset($mo_ta) && $mo_ta != "") echo $mo_ta; ?></textarea>
-                </div>
+                
                 <div class="row mb10">
                     <input type="hidden" name="id" value ="<?php if(isset($id)&&$id>0) echo $id?>">
                     <input type="submit" name="capnhat" value="Cập nhât">
@@ -29,5 +26,8 @@ if(is_array($dm)){
                 </div>
                 </form>
             </div>
+            <?php 
+                    if(isset($thongbao)&&($thongbao!='')) echo $thongbao;
+                ?>
         </div>
     </div>

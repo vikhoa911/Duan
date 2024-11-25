@@ -9,7 +9,7 @@
                             <th></th>
                             <th>MÃ LOẠI</th>
                             <th>TÊN LOẠI</th>
-                            <th>MÔ TẢ</th>
+                            
                             <th></th>
                         </tr>
                         
@@ -23,7 +23,7 @@
                             <td><input type="checkbox"></td>
                             <td>'.$id_danh_muc.'</td>
                             <td>'.$ten_danh_muc.'</td>
-                            <td>'.$mo_ta.'</td>
+                            
                             <td><a href="'.$suadm.'"><input type="button" value="Sửa"></a> <a href="'.$xoadm.'"><input type="button" value="Xóa"></a></td>
                         </tr>
                         ';
