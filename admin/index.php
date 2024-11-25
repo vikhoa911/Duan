@@ -11,8 +11,8 @@ include "../models/danhmuc.php";
             case 'themdm':
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                     $ten_danh_muc = $_POST['ten_danh_muc'];
-                    $mo_ta = isset($_POST['mo_ta']) ? $_POST['mo_ta'] : '';
-                    them_danh_muc($ten_danh_muc, $mo_ta);
+                    
+                    them_danh_muc($ten_danh_muc);
                     $thongbao = 'Thêm thành công';
                 }
                 
@@ -34,17 +34,17 @@ include "../models/danhmuc.php";
                         include "danhmuc/update.php";
                         break;
                     
-                    case 'updatedm':
-                        if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
-                            $ten_danh_muc=$_POST['ten_danh_muc'];
-                            $mo_ta = isset($_POST['mo_ta']) ? $_POST['mo_ta'] : '';
-                            $id=$_POST['id'];
-                            update_danhmuc($id,$tenloai,$mo_ta);
-                            $thongbao='Cập nhật thành công';
-                        }
-                        $listdanhmuc=loadall_danh_muc();
-                        include "danhmuc/hienthidm.php";
-                        break;
+                        case 'updatedm':
+                            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                                $ten_danh_muc = $_POST['ten_danh_muc'];
+                                $id_danh_muc = $_POST['id']; // Lấy đúng tên biến 'id' từ input hidden
+                                update_danhmuc($id_danh_muc, $ten_danh_muc);
+                                $thongbao = 'Cập nhật thành công';
+                            }
+                            $listdanh_muc = loadall_danh_muc();
+                            include "danhmuc/hienthidm.php";
+                            break;
+                        
             case 'hienthidm':
                 $listdanh_muc=loadall_danh_muc();
                 include "danhmuc/hienthidm.php";
