@@ -1,6 +1,6 @@
 <div class="row">
     <div class="row formcontent text-center">
-        <h1>DANH SÁCH HÀNG HÓA</h1>
+        <h1>DANH SÁCH LOẠI HÀNG</h1>
     <div class="row formcontent  text-center">
         <div class="row mb-3 formloai">
             <table class="table table-striped table-bordered">

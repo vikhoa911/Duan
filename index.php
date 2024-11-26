@@ -40,6 +40,9 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             case 'nu':
                 include "views/nu.php"; // Hiển thị san pham nữ
                 break;
+            case 'khac':
+                include "views/khac.php"; // Hiển thị san pham nữ
+                break;
             
             
                 // case 'dangnhap':
