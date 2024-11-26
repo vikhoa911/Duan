@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box; /* Đảm bảo tính toán kích thước chính xác */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    max-width: 1470px; /* Giới hạn chiều rộng của toàn bộ trang */
+    margin: 0 auto; /* Căn giữa */
+}
+
+.headeradmin {
+    width: 100%; /* Chiếm hết chiều rộng */
+    background-color: black;
+    height: 50px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+.headeradmin h1 {
+    color: white;
+}
+
+.menu {
+    width: 100%; /* Chiếm hết chiều rộng */
+    background-color: black;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-left: 50px;
+    margin-left: 1px;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center; /* Căn giữa các mục */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu ul li {
+    margin-right: 20px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: wheat;
+}
+
+.formtitle {
+    margin-left: 70px;
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+.formcontent {
+    width: 800px;
+    margin: 30px;
+    margin-left: 190px;
+}
+
+.formcontent .row {
+    margin-bottom: 20px;
+}
+
+.formcontent input[type="submit"],
+.formcontent input[type="reset"] {
+    width: 150px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.formcontent a {
+    width: 150px;
+}
