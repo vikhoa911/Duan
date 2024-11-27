@@ -35,8 +35,9 @@
             <span class="navbar-toggler-icon"></span>
         </button> -->
             <ul class="navbar-nav">
-                <?php if (isset($_SESSION['ten_dang_nhap'])): ?>
-                    <?php extract($_SESSION['ten_dang_nhap']); ?>
+            <?php
+if (isset($_SESSION['ten_dang_nhap'])) {
+    extract($_SESSION['ten_dang_nhap']); ?>
                     <!-- Hiển thị tên người dùng -->
                     <li class="nav-item">
                         <a class="nav-link">Xin chào, <span style="color: red; text-transform: uppercase; font-weight: bold;"><?= $ten_dang_nhap; ?></span></a>
@@ -45,17 +46,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?act=mybill"><i class="fas fa-receipt"></i> Đơn hàng</a>
                     </li>
-                    <!-- Đăng nhập admin nếu vai trò là admin -->
-                    <?php if ($role == 1): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="admin/index.php"><i class="fas fa-user-shield"></i> Admin</a>
-                        </li>
-                    <?php endif; ?>
                     <!-- Đăng xuất -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?act=thoat"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
                     </li>
-                <?php else: ?>
+                    <!-- Đăng nhập admin nếu vai trò là admin -->
+                    <?php 
+                if($vai_tro==1){
+                ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin/index.php"><i class="fas fa-user-shield"></i> Admin</a>
+                        </li>
+                        <?php } ?>
+                    <?php
+        } else {
+        ?>
                     <!-- Nếu chưa đăng nhập -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?act=dangnhap"><i class="fas fa-user"></i></a>
@@ -63,11 +68,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?act=dangky"><i class="fas fa-user-plus"></i></a>
                     </li>
-                <?php endif; ?>
-                <!-- Giỏ hàng -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i></a>
-                </li>
+                    <?php } ?>
             </ul>
         </div>
     </div>

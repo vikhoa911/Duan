@@ -14,7 +14,6 @@
                         <input type="password" id="mat_khau" name="mat_khau" class="form-control" placeholder="Nhập mật khẩu" required>
                     </div>
                     <button type="submit" name="dangnhap" class="btn btn-primary w-100">Đăng nhập</button>
-                    <p class="mt-3">Bạn chưa có tài khoản? <a href="index.php?act=dangky">Đăng ký ngay</a></p>
                 </form>
             </div>
             <div class="col-md-6">
@@ -25,6 +24,5 @@
 </section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alp
