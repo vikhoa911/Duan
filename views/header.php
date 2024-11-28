@@ -27,7 +27,7 @@
                     <a class="nav-link" href="index.php?act=nu">NỮ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?act=top">KHÁC</a>
+                    <a class="nav-link" href="index.php?act=khac">KHÁC</a>
                 </li>
             </ul>
             <a class="navbar-brand titleshop" href="index.php">VASK STORE</a>

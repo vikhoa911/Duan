@@ -50,7 +50,18 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 session_destroy();
                 header('Location:index.php');
             break;
-
+            case 'nam':
+                include "views/nam.php"; // Hiển thị trang "nam"
+            break;
+            case 'nu':
+                include "views/nu.php"; // Hiển thị trang "nu"
+            break;
+            case 'khac':
+                include "views/khac.php"; // Hiển thị trang "khác"
+            break;
+            case 'home2':
+                include "views/home2.php"; // Hiển thị trang "home2"
+            break;
         default:
             include "views/home.php"; // Hiển thị trang chủ khi không có hành động nào
             break;
