@@ -53,10 +53,7 @@ body {
 .menu ul li a:hover {
     color: wheat;
 }
-table tr th,td{
-    margin: 20px;
-    text-align: center;
-}
+
 .formtitle {
     margin-left: 70px;
     margin-top: 50px;
@@ -68,7 +65,9 @@ table tr th,td{
     margin: 30px;
     margin-left: 190px;
 }
-
+.formcontent1 {
+    margin-left: 400px;
+}
 .formcontent .row {
     margin-bottom: 20px;
 }
