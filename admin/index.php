@@ -3,6 +3,7 @@ session_start();
 include "../models/config.php";
 include "../models/sanpham.php";
 include "../models/danhmuc.php";
+include "../models/binhluan.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -125,6 +126,18 @@ include "../models/danhmuc.php";
                 $listdanh_muc=loadall_danh_muc();
                 include "sanpham/hienthisp.php";
                 break;
+                case 'dsbl':
+                    $listbinhluan = loadall_binhluan(0);
+                    include "binhluan/list.php";
+                    break;
+                
+                case 'xoabl':
+                    if (isset($_GET['id_binh_luan']) && ($_GET['id_binh_luan'] > 0)) {
+                        delete_binhluan($_GET['id_binh_luan']);
+                    }
+                    $listbinhluan = loadall_binhluan(0);
+                    include "binhluan/list.php";
+                    break;
                 
                     
                     
