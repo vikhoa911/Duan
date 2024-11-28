@@ -23,6 +23,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
+                    <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php?act=nam">NAM</a>
                     </li>
                     <li class="nav-item">
@@ -31,18 +34,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?act=khac">KHÁC</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">TRANG CHỦ</a>
-                    </li>
                 </ul>
-                <ul class="navbar-nav">
+                <!-- <ul class="navbar-nav">
                     <li class="nav-item">
                         <form action="index.php?act=sanpham" method="post">
                             <input type="text" class="form-control" name="kyw" placeholder="Tìm kiếm sản phẩm...">
                             <input type="submit" class="btn btn-primary" name="timkiem" value="Tìm kiếm">
                         </form>
                     </li>
-                </ul>
+                </ul> -->
                 <ul class="navbar-nav">
                     <?php
                     if (isset($_SESSION['ten_dang_nhap'])) {

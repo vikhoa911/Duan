@@ -25,26 +25,32 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             include "views/dangky.php"; // Hiển thị form đăng ký
             break;
 
-        case 'dangnhap':
-            if (isset($_POST['dangnhap'])) {
-                $ten_dang_nhap = $_POST['ten_dang_nhap'];
-                $mat_khau = $_POST['mat_khau'];
-                $checkuser = check_user($ten_dang_nhap, $mat_khau);
-                if (is_array($checkuser)) {
-                    $_SESSION['ten_dang_nhap'] = $checkuser;
-                    header('Location:index.php');
-                } else {
-                    $thongbao = "Sai tài khoản hoặc mật khẩu ! <br> Bạn có thể đăng ký.";
+            case 'dangnhap':
+                if (isset($_POST['dangnhap'])) {
+                    $ten_dang_nhap = $_POST['ten_dang_nhap'];
+                    $mat_khau = $_POST['mat_khau'];
+                    $checkuser = check_user($ten_dang_nhap, $mat_khau);
+                    
+                    if (is_array($checkuser)) {
+                        $_SESSION['ten_dang_nhap'] = $checkuser;
+                        header('Location:index.php');
+                    } else {
+                        // Thêm thông báo lỗi với liên kết "Quên mật khẩu" và "Đăng ký"
+                        $thongbao = "Sai tài khoản hoặc mật khẩu! <br> 
+                                    <a href='index.php?act=quenmatkhau'>Quên mật khẩu?</a> ";
+                    }
                 }
-            }
-            include "views/dangnhap.php";
-            break;
+                include "views/dangnhap.php";
+                break;
+            
 
         case 'thoat':
             session_destroy();
             header('Location:index.php');
             break;
-
+            case 'home2':
+                include "views/home2.php"; // Hiển thị trang "nam"
+                break;
         case 'nam':
             include "views/nam.php"; // Hiển thị trang "nam"
             break;
