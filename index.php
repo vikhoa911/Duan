@@ -5,8 +5,6 @@ include "models/taikhoan.php";
 include "views/header.php"; // Đưa header vào đầu
 
 // Xử lý đăng xuất
-
-
 if (isset($_GET['act']) && $_GET['act'] != "") {
     $act = $_GET['act'];
     switch ($act) {
@@ -28,40 +26,53 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             break;
 
         case 'dangnhap':
-            if(isset($_POST['dangnhap'])){
-                // die();
-                
-                $ten_dang_nhap=$_POST['ten_dang_nhap'];
-                $mat_khau=$_POST['mat_khau'];
-                $checkuser=check_user($ten_dang_nhap, $mat_khau);
-                if(is_array($checkuser)){
-                    $_SESSION['ten_dang_nhap']=$checkuser;
-                    // $thongbao="Đăng nhập thành công !";
+            if (isset($_POST['dangnhap'])) {
+                $ten_dang_nhap = $_POST['ten_dang_nhap'];
+                $mat_khau = $_POST['mat_khau'];
+                $checkuser = check_user($ten_dang_nhap, $mat_khau);
+                if (is_array($checkuser)) {
+                    $_SESSION['ten_dang_nhap'] = $checkuser;
                     header('Location:index.php');
-                }else{
-                    $thongbao="Sai tài khoản hoặc mật khẩu ! <br> Bạn có thể đăng ký.";
-                    
+                } else {
+                    $thongbao = "Sai tài khoản hoặc mật khẩu ! <br> Bạn có thể đăng ký.";
                 }
             }
-            
             include "views/dangnhap.php";
             break;
-            case 'thoat':
-                session_destroy();
-                header('Location:index.php');
+
+        case 'thoat':
+            session_destroy();
+            header('Location:index.php');
             break;
-            case 'nam':
-                include "views/nam.php"; // Hiển thị trang "nam"
+
+        case 'nam':
+            include "views/nam.php"; // Hiển thị trang "nam"
             break;
-            case 'nu':
-                include "views/nu.php"; // Hiển thị trang "nu"
+
+        case 'nu':
+            include "views/nu.php"; // Hiển thị trang "nu"
             break;
-            case 'khac':
-                include "views/khac.php"; // Hiển thị trang "khác"
+
+        case 'khac':
+            include "views/khac.php"; // Hiển thị trang "khác"
             break;
-            case 'home2':
-                include "views/home2.php"; // Hiển thị trang "home2"
+
+        case 'chitietsp':
+            if (isset($_GET['id_san_pham']) && $_GET['id_san_pham'] != "") {
+                $id_san_pham = $_GET['id_san_pham'];
+                include "models/sanpham.php"; // File xử lý sản phẩm
+                $sanpham = loadone_san_pham($id_san_pham); // Lấy thông tin sản phẩm theo ID từ cơ sở dữ liệu
+
+                if ($sanpham) {
+                    include "views/spct.php"; // Trang chi tiết sản phẩm
+                } else {
+                    echo "<p>Sản phẩm không tồn tại.</p>";
+                }
+            } else {
+                header("Location: index.php"); // Nếu không có id_san_pham, chuyển hướng về trang chủ
+            }
             break;
+
         default:
             include "views/home.php"; // Hiển thị trang chủ khi không có hành động nào
             break;
