@@ -12,7 +12,7 @@
 ?>
 
 <div class="row">
-            <div class="row formtitle mb-4">
+            <div class="row formcontent mb-4">
                 <h1 class="text-center">CẬP NHẬT SẢN PHẨM</h1>
             </div>
             <div class="row formcontent">
