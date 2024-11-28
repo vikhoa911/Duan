@@ -82,4 +82,15 @@ function loadall_danhmuc() {
 }
 
 
+function getProductById($id) {
+    global $conn; // Kết nối cơ sở dữ liệu
+    $sql = "SELECT * FROM sanpham WHERE id_san_pham = :id";  // Sử dụng id_san_pham thay vì id
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+
+
 ?>

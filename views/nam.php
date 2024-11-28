@@ -29,9 +29,12 @@
                         // Hiển thị thông tin sản phẩm
                         echo '
                             <div class="product-item">
-                                <img src="' . $hinh_full_path . '" alt="' . htmlspecialchars($ten_san_pham) . '">
-                                <h3><a href="' . $linksp . '">' . htmlspecialchars($ten_san_pham) . '</a></h3>
-                                <p class="price">$' . number_format($gia, 2) . '</p>
+                                <a href="' . $linksp . '">
+                                    <img src="' . $hinh_full_path . '" alt="' . htmlspecialchars($ten_san_pham) . '">
+                                    <h3>' . htmlspecialchars($ten_san_pham) . '</h3>
+                                    <p class="price">$' . number_format($gia, 2) . '</p>
+                                </a>
+                                <a href="index.php?act=sanphamchitiet&id=' . $product['id_san_pham'] . '">Chi tiết</a>
                             </div>
                         ';
                     }
