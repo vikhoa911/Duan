@@ -1,9 +1,9 @@
 <?php
 session_start();
-include "../models/config.php";
+include __DIR__ ."/../models/config.php"; 
 include "../models/sanpham.php";
 include "../models/danhmuc.php";
-include "../models/binhluan.php";
+include "../models/taikhoan.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -126,20 +126,45 @@ include "../models/binhluan.php";
                 $listdanh_muc=loadall_danh_muc();
                 include "sanpham/hienthisp.php";
                 break;
-                case 'dsbl':
-                    $listbinhluan = loadall_binhluan(0);
-                    include "binhluan/list.php";
+                
+                case 'hienthitk':
+                    $listtai_khoan = loadall_tai_khoan();  // Cập nhật hàm loadall_tai_khoan
+                    include "taikhoan/hienthitk.php";
                     break;
                 
-                case 'xoabl':
-                    if (isset($_GET['id_binh_luan']) && ($_GET['id_binh_luan'] > 0)) {
-                        delete_binhluan($_GET['id_binh_luan']);
+                case 'suatk':
+                    if(isset($_GET['id_tai_khoan']) && ($_GET['id_tai_khoan'] > 0)){
+                        $taikhoan = loadone_tai_khoan($_GET['id_tai_khoan']);  // Cập nhật tham số
                     }
-                    $listbinhluan = loadall_binhluan(0);
-                    include "binhluan/list.php";
+                    include "taikhoan/suatk.php";
                     break;
                 
+                    case 'updatetk':
+                        if (isset($_POST['capnhat'])) {
+                            $id_tai_khoan = $_POST['id_tai_khoan'];
+                            $ten_dang_nhap = $_POST['user'];
+                            $email = $_POST['email'];
+                            $dia_chi = $_POST['address'];
+                            $so_dien_thoai = $_POST['tel'];
+                            $vai_tro = $_POST['vai_tro'];  // Lấy giá trị vai trò từ form
+                            
+                            // Cập nhật tài khoản
+                            update_tai_khoan($id_tai_khoan, $ten_dang_nhap, $email, $dia_chi, $so_dien_thoai, $vai_tro);
+                            
+                            $thongbao = 'Cập nhật tài khoản thành công';
+                        }
+                        
+                        $listtai_khoan = loadall_tai_khoan();  // Cập nhật hàm
+                        include "taikhoan/hienthitk.php";
+                        break;
                     
+                case 'xoatk':
+                    if(isset($_GET['id_tai_khoan']) && ($_GET['id_tai_khoan'] > 0)){
+                        delete_tai_khoan($_GET['id_tai_khoan']);
+                    }
+                    $listtai_khoan = loadall_tai_khoan();
+                    include "taikhoan/hienthitk.php";
+                    break;        
                     
             default:
                 include "home.php";
