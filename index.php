@@ -24,6 +24,22 @@ if (isset($_POST['cart_id'])) {
     header("Location: index.php?act=giohang");
     exit();
 }
+if (isset($_GET['act']) && $_GET['act'] === 'update_cart') {
+    $input = json_decode(file_get_contents("php://input"), true);
+    $productId = $input['id'];
+    $newQuantity = $input['quantity'];
+
+    foreach ($_SESSION['mycart'] as &$cartItem) {
+        if ($cartItem[0] == $productId) {
+            $cartItem[4] = $newQuantity; // Cập nhật số lượng trong session
+            break;
+        }
+    }
+    echo json_encode(["status" => "success", "message" => "Cart updated successfully"]);
+    exit();
+}
+
+
 
 if (isset($_GET['act']) && $_GET['act'] != "") {
     $act = $_GET['act'];
