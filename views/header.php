@@ -53,7 +53,7 @@
                         </li>
                         <!-- Đơn hàng của tôi -->
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?act=mybill"><i class="fas fa-receipt"></i> Đơn hàng</a>
+                            <a class="nav-link" href="index.php?act=giohang"><i class="fas fa-receipt"></i> Đơn hàng</a>
                         </li>
                         <!-- Đăng xuất -->
                         <li class="nav-item">

@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Kiểm tra nếu người dùng đã đăng nhập, chuyển hướng về trang chủ
 if (isset($_SESSION['ten_dang_nhap'])) {
