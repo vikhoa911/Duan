@@ -245,6 +245,19 @@
 h1.text-center.text-primary.font-weight-bold.mb-4.fs-1 {
     margin-top: 20px;
 }
+.product-item {
+    width: 100%; /* Điều chỉnh kích thước theo thiết kế */
+    max-width: 600px; /* Hoặc đặt giá trị cố định */
+    margin: auto; /* Canh giữa sản phẩm */
+}
+
+.product-item img {
+    max-height: 200px;
+    object-fit: cover;
+}
+.card-title{
+    font-size: 20px;
+}
 
 @media (max-width: 768px) {
     .img-container {

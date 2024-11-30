@@ -16,7 +16,7 @@
     <!-- Nav -->
     <div class="row mb menu">
         <ul>
-            <li><a href="../index.php">Trang chủ VAST</a></li>||
+            <li><a href="../index.php">Trang chủ VASK</a></li>||
             <li><a href="index.php?act=hienthidm">Danh mục</a></li>||
             <li><a href="index.php?act=hienthisp">Hàng hóa</a></li>||
             <li><a href="index.php?act=hienthitk">Khách hàng</a></li>||
