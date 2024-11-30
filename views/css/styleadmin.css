@@ -65,7 +65,9 @@ body {
     margin: 30px;
     margin-left: 190px;
 }
-
+.formcontent1 {
+    margin-left: 400px;
+}
 .formcontent .row {
     margin-bottom: 20px;
 }

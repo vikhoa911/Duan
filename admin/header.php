@@ -13,18 +13,15 @@
 <body>
     <!-- Header -->
      
-        <div class="headeradmin">
-           <h1>VASK.COM.VN</h1>
-        </div>
     <!-- Nav -->
     <div class="row mb menu">
         <ul>
-            <li><a href="index.php">Trang chủ</a></li>
-            <li><a href="index.php?act=hienthidm">Danh mục</a></li>
-            <li><a href="index.php?act=hienthisp">Hàng hóa</a></li>
-            <li><a href="index.php?act=dskh">Khách hàng</a></li>
-            <li><a href="index.php?act=dsbl">Bình luận</a></li>
-            <li><a href="index.php?act=listbill">Đơn hàng</a></li>
+            <li><a href="../index.php">Trang chủ VAST</a></li>||
+            <li><a href="index.php?act=hienthidm">Danh mục</a></li>||
+            <li><a href="index.php?act=hienthisp">Hàng hóa</a></li>||
+            <li><a href="index.php?act=hienthitk">Khách hàng</a></li>||
+            <li><a href="index.php?act=hienthibl">Bình luận</a></li>||
+            <li><a href="index.php?act=listbill">Đơn hàng</a></li>||
             <li><a href="index.php?act=thongke">Thống kê</a></li>
         </ul>
     </div>

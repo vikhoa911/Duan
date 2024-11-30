@@ -1,8 +1,10 @@
 <?php
 session_start();
-include "../models/config.php";
+include __DIR__ ."/../models/config.php"; 
 include "../models/sanpham.php";
 include "../models/danhmuc.php";
+include "../models/taikhoan.php";
+include "../models/binhluan.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -126,8 +128,57 @@ include "../models/danhmuc.php";
                 include "sanpham/hienthisp.php";
                 break;
                 
+                case 'hienthitk':
+                    $listtai_khoan = loadall_tai_khoan();  // Cập nhật hàm loadall_tai_khoan
+                    include "taikhoan/hienthitk.php";
+                    break;
+                
+                case 'suatk':
+                    if(isset($_GET['id_tai_khoan']) && ($_GET['id_tai_khoan'] > 0)){
+                        $taikhoan = loadone_tai_khoan($_GET['id_tai_khoan']);  // Cập nhật tham số
+                    }
+                    include "taikhoan/suatk.php";
+                    break;
+                
+                    case 'updatetk':
+                        if (isset($_POST['capnhat'])) {
+                            $id_tai_khoan = $_POST['id_tai_khoan'];
+                            $ten_dang_nhap = $_POST['user'];
+                            $email = $_POST['email'];
+                            $dia_chi = $_POST['address'];
+                            $so_dien_thoai = $_POST['tel'];
+                            $vai_tro = $_POST['vai_tro'];  // Lấy giá trị vai trò từ form
+                            
+                            // Cập nhật tài khoản
+                            update_tai_khoan($id_tai_khoan, $ten_dang_nhap, $email, $dia_chi, $so_dien_thoai, $vai_tro);
+                            
+                            $thongbao = 'Cập nhật tài khoản thành công';
+                        }
+                        
+                        $listtai_khoan = loadall_tai_khoan();  // Cập nhật hàm
+                        include "taikhoan/hienthitk.php";
+                        break;
                     
-                    
+                case 'xoatk':
+                    if(isset($_GET['id_tai_khoan']) && ($_GET['id_tai_khoan'] > 0)){
+                        delete_tai_khoan($_GET['id_tai_khoan']);
+                    }
+                    $listtai_khoan = loadall_tai_khoan();
+                    include "taikhoan/hienthitk.php";
+                    break;        
+                    case 'hienthibl':
+                        $listbinhluan = loadall_binhluan(0); // Lấy tất cả bình luận, id_binh_luan=0 để không lọc theo ID
+                        include "binhluan/hienthibl.php"; // Gọi file giao diện hiển thị bình luận
+                        break;
+                        case 'xoabl':
+                            if (isset($_GET['id_binh_luan']) && ($_GET['id_binh_luan'] > 0)) {
+                                delete_binhluan($_GET['id_binh_luan']);
+                                $thongbao = "Xóa bình luận thành công!";
+                            }
+                            $listbinhluan = loadall_binhluan(0); // Lấy lại danh sách sau khi xóa
+                            include "binhluan/hienthibl.php";
+                            break;
+                        
             default:
                 include "home.php";
                 break;
