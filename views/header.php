@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vask Clothes</title>
+    <link rel="icon" type="image/x-icon" href="https://as1.ftcdn.net/v2/jpg/01/83/89/40/1000_F_183894038_uIpAt6OXo8bh8rDzMG1YCFBnTKZr0Wll.jpg">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,13 +27,13 @@
                     <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?act=nam">NAM</a>
+                        <a class="nav-link" href="index.php?act=nam">Đồ Nam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?act=nu">NỮ</a>
+                        <a class="nav-link" href="index.php?act=nu">Đồ Nữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?act=khac">KHÁC</a>
+                        <a class="nav-link" href="index.php?act=khac">Phụ kiện</a>
                     </li>
                 </ul>
                 <!-- <ul class="navbar-nav">
@@ -53,7 +54,7 @@
                         </li>
                         <!-- Đơn hàng của tôi -->
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?act=giohang"><i class="fas fa-receipt"></i> Đơn hàng</a>
+                            <a class="nav-link" href="index.php?act=giohang"><i class="fas fa-list"></i> Đơn hàng</a>
                         </li>
                         <!-- Đăng xuất -->
                         <li class="nav-item">
@@ -72,10 +73,10 @@
                     ?>
                         <!-- Nếu chưa đăng nhập -->
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?act=dangnhap"><i class="fas fa-user"></i></a>
+                            <a class="nav-link" href="index.php?act=dangnhap"><i class="fas fa-user"></i> Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?act=dangky"><i class="fas fa-user-plus"></i></a>
+                            <a class="nav-link" href="index.php?act=dangky"><i class="fas fa-user-plus"></i> Đăng ký</a>
                         </li>
                     <?php } ?>
                 </ul>
