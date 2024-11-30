@@ -8,7 +8,7 @@
                 </div>
                 <div class="lg:w-1/2 lg:pl-10 mt-6 lg:mt-0">
                     <p class="text-gray-700 text-lg mb-4"><strong>Mô tả:</strong> <?= $sanpham['mo_ta']; ?></p>
-                    <p class="text-gray-800 text-xl font-semibold mb-2"><strong>Giá:</strong> <?= number_format($sanpham['gia']); ?>₫</p>
+                    <p class="text-gray-800 text-xl font-semibold mb-2"><strong>Giá:</strong> <?= number_format($sanpham['gia']); ?>USD</p>
                     <form action="index.php?act=themgiohang" method="post">
                         <input type="hidden" name="id_san_pham" value="<?= $sanpham['id_san_pham']; ?>">
                         <input type="hidden" name="ten_san_pham" value="<?= $sanpham['ten_san_pham']; ?>">
