@@ -119,9 +119,11 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                     $id_san_pham = $_POST['id_san_pham'];
                     $ten_san_pham = $_POST['ten_san_pham'];
                     $hinh = $_POST['hinh'];
-                    $gia = $_POST['gia'];
-                    $soluong = $_POST['soluong'];
-                    $thanhtien = $soluong * $gia;
+                    $soluong = (int)$_POST['soluong']; // Chuyển đổi thành số nguyên
+$gia = (float)$_POST['gia']; // Chuyển đổi thành số thực
+
+$thanhtien = $soluong * $gia; // Phép nhân hợp lệ
+
                     $spadd = [$id_san_pham, $ten_san_pham, $hinh, $gia, $soluong, $thanhtien];
             
                     // Lưu sản phẩm mới vào giỏ hàng (không ghi đè các sản phẩm cũ)

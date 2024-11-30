@@ -1,12 +1,11 @@
 <div class="row">
-    <div class="row formtitle">
-        <h1>DANH SÁCH BÌNH LUẬN</h1>
+    <div class="row formtitle mb-4">
+        <h1 class="text-center">DANH SÁCH BÌNH LUẬN</h1>
     </div>
-    <div class="row formcontent">
-        <div class="row mb10 formloai">
-            <table border="1">
+    <div class="row formcontent container">
+        <div class="row mb-3 formcontent">
+            <table class="table table-bordered table-striped text-center align-middle">
                 <tr>
-                    <th></th>
                     <th>ID BÌNH LUẬN</th>
                     <th>NỘI DUNG</th>
                     <th>ID NGƯỜI DÙNG</th>
@@ -22,7 +21,6 @@
                     $xoabl = "index.php?act=xoabl&id_binh_luan=" . $id_binh_luan;
                     echo '
                 <tr>
-                    <td><input type="checkbox"></td>
                     <td>' . $id_binh_luan . '</td>
                     <td>' . $noi_dung . '</td>
                     <td>' . $id_tai_khoan . '</td>
@@ -31,7 +29,7 @@
                     <td>' . $thoi_gian . '</td>
                     <td>
                         
-                        <a href="' . $xoabl . '"><input type="button" value="Xóa"></a>
+                        <a href="' . $xoabl . '"><input type="button" class="btn btn-danger btn-sm" value="Xóa"></a>
                     </td>
                 </tr>
                 ';

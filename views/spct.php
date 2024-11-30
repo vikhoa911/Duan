@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Sản Phẩm</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
 <body class="bg-gray-100">
     <div class="max-w-5xl mx-auto p-6 bg-white shadow-md rounded-lg mt-6">
         <?php if ($sanpham): ?>
@@ -16,8 +8,17 @@
                 </div>
                 <div class="lg:w-1/2 lg:pl-10 mt-6 lg:mt-0">
                     <p class="text-gray-700 text-lg mb-4"><strong>Mô tả:</strong> <?= $sanpham['mo_ta']; ?></p>
-                    <p class="text-gray-800 text-xl font-semibold"><strong>Giá:</strong> <?= number_format($sanpham['gia']); ?>₫</p>
-                    <button class="bg-blue-600 text-white px-4 py-2 mt-6 rounded-lg">Thêm vào giỏ hàng</button>
+                    <p class="text-gray-800 text-xl font-semibold mb-2"><strong>Giá:</strong> <?= number_format($sanpham['gia']); ?>₫</p>
+                    <form action="index.php?act=themgiohang" method="post">
+                        <input type="hidden" name="id_san_pham" value="<?= $sanpham['id_san_pham']; ?>">
+                        <input type="hidden" name="ten_san_pham" value="<?= $sanpham['ten_san_pham']; ?>">
+                        <input type="hidden" name="hinh" value="<?= $sanpham['hinh']; ?>">
+                        <input type="hidden" name="gia" value="<?= $sanpham['gia']; ?>">
+                        <input type="number" name="soluong" value="1" class="btn btn-outline-secondary mb-2">
+                        <br>
+                        <input type="submit" name="themgiohang" class="btn btn-primary" value="Thêm vào giỏ hàng">
+                    </form>
+
                 </div>
             </div>
         <?php else: ?>
@@ -25,4 +26,5 @@
         <?php endif; ?>
     </div>
 </body>
+
 </html>

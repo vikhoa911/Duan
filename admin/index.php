@@ -4,6 +4,7 @@ include __DIR__ ."/../models/config.php";
 include "../models/sanpham.php";
 include "../models/danhmuc.php";
 include "../models/taikhoan.php";
+include "../models/binhluan.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -165,7 +166,19 @@ include "../models/taikhoan.php";
                     $listtai_khoan = loadall_tai_khoan();
                     include "taikhoan/hienthitk.php";
                     break;        
-                    
+                    case 'hienthibl':
+                        $listbinhluan = loadall_binhluan(0); // Lấy tất cả bình luận, id_binh_luan=0 để không lọc theo ID
+                        include "binhluan/hienthibl.php"; // Gọi file giao diện hiển thị bình luận
+                        break;
+                        case 'xoabl':
+                            if (isset($_GET['id_binh_luan']) && ($_GET['id_binh_luan'] > 0)) {
+                                delete_binhluan($_GET['id_binh_luan']);
+                                $thongbao = "Xóa bình luận thành công!";
+                            }
+                            $listbinhluan = loadall_binhluan(0); // Lấy lại danh sách sau khi xóa
+                            include "binhluan/hienthibl.php";
+                            break;
+                        
             default:
                 include "home.php";
                 break;
