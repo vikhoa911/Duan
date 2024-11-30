@@ -1,5 +1,5 @@
 <body class="bg-gray-100">
-    <div class="max-w-5xl mx-auto p-6 bg-white shadow-md rounded-lg mt-6">
+    <div class="max-w-5xl mx-auto p-6 bg-white shadow-md rounded-lg mt-6 mb-4">
         <?php if ($sanpham): ?>
             <h1 class="text-3xl font-bold mb-4"><?= $sanpham['ten_san_pham']; ?></h1>
             <div class="flex flex-col lg:flex-row">
