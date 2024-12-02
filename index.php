@@ -2,6 +2,7 @@
 session_start();
 include "models/config.php";
 include "models/taikhoan.php";
+include "models/giohang.php";
 include "views/header.php"; // Đưa header vào đầu
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
@@ -44,6 +45,12 @@ if (isset($_GET['act']) && $_GET['act'] === 'update_cart') {
 if (isset($_GET['act']) && $_GET['act'] != "") {
     $act = $_GET['act'];
     switch ($act) {
+        
+        case 'thoat':
+            session_destroy();
+            header('Location: index.php');
+            break;
+        
         case 'dangky':
             if (isset($_POST['dangky']) && $_POST['dangky']) {
                 $email = $_POST['email'];
@@ -80,10 +87,6 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 break;
             
 
-        case 'thoat':
-            session_destroy();
-            header('Location:index.php');
-            break;
             case 'home2':
                 include "views/home2.php"; // Hiển thị trang "nam"
                 break;
@@ -132,10 +135,90 @@ $thanhtien = $soluong * $gia; // Phép nhân hợp lệ
                 include "views/giohang.php";
                 break;
             
-            
+                
         case 'giohang':
             include "views/giohang.php"; // Hiển thị trang giỏ hàng
             break;
+            case 'thanhtoan':
+            include "views/thanhtoan.php"; // Hiển thị trang giỏ hàng
+            break;
+            case 'dat_hang':
+                if (isset($_POST['dongydathang']) && $_POST['dongydathang']) {
+                    $id_tai_khoan = isset($_SESSION['ten_dang_nhap']) ? $_SESSION['ten_dang_nhap']['id_tai_khoan'] : 0;
+                    $ten_dang_nhap = $_POST['ten_dang_nhap'];
+                    $email = $_POST['email'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $so_dien_thoai = $_POST['so_dien_thoai'];
+                    $thanh_toan_don_hang = $_POST['thanh_toan_don_hang'];
+                    $ngaydathang = date('h:i:sa d/m/Y');
+                    $tongdonhang = tongdonhang();
+            
+                    // Thêm thông tin người nhận
+                    $ten_nhan = $_POST['ten_dang_nhap'];  // Tên người nhận có thể được lấy từ form
+                    $dia_chi_nhan = $_POST['dia_chi'];  // Địa chỉ nhận hàng
+                    $so_dien_thoai_nhan = $_POST['so_dien_thoai'];  // Số điện thoại nhận hàng
+            
+                    // Lưu thông tin đơn hàng
+                    $id_don_hang = insert_don_hang($id_tai_khoan, $ten_dang_nhap, $email, $dia_chi, $so_dien_thoai, $thanh_toan_don_hang, $ngaydathang, $tongdonhang, $ten_nhan, $dia_chi_nhan, $so_dien_thoai_nhan);
+            
+                    // Lưu chi tiết đơn hàng
+                    foreach ($_SESSION['mycart'] as $cart) {
+                        $id_tai_khoan = $id_tai_khoan;  // ID người dùng
+                        $id_san_pham = $cart[0];  // ID sản phẩm
+                        $hinh = $cart[2];         // Hình ảnh sản phẩm
+                        $ten_san_pham = $cart[1]; // Tên sản phẩm
+                        $gia = $cart[3];          // Giá sản phẩm
+                        $so_luong = $cart[4];     // Số lượng sản phẩm
+                        $thanhtien = $cart[5];    // Thành tiền
+                    
+                        // Kiểm tra lại giá trị so_luong và thanhtien
+                        insert_gio_hang($id_tai_khoan, $id_san_pham, $hinh, $ten_san_pham, $gia, $so_luong, $thanhtien, $id_don_hang);
+                    }
+                    
+                    
+            
+                    // Xóa giỏ hàng sau khi đặt hàng
+            
+                    // Lấy thông tin đơn hàng để hiển thị
+                    $don_hang = loadone_don_hang($id_don_hang);
+                    $don_hangct = loadall_gio_hang($id_don_hang);
+            
+                    if (empty($don_hangct)) {
+                        $thongbao = "Không tìm thấy chi tiết đơn hàng.";
+                    }
+            
+                    $listdon_hang = $don_hangct;
+                    include "views/hoanthanhdonhang.php";
+                } else {
+                    $thongbao = "Yêu cầu không hợp lệ.";
+                }
+                break;
+                case 'suatk':
+                    if(isset($_GET['id_tai_khoan']) && ($_GET['id_tai_khoan'] > 0)){
+                        $tai_khoan = loadone_tai_khoan($_GET['id_tai_khoan']);  // Cập nhật tham số
+                    }
+                    include "views/suataikhoan.php";
+                    break;
+                case 'suataikhoan':
+                    if (isset($_GET['id_tai_khoan']) && ($_GET['id_tai_khoan'] > 0)) {
+                        $tai_khoan = loadone_tai_khoan($_GET['id_tai_khoan']);
+                    }
+                    if (isset($_POST['capnhat'])) {
+                        $id_tai_khoan = $_POST['id_tai_khoan'];
+                        $mat_khau = $_POST['mat_khau'];
+                        $email = $_POST['email'];
+                        $dia_chi = $_POST['dia_chi'];
+                        $so_dien_thoai = $_POST['so_dien_thoai'];
+                
+                        sua_tai_khoan($id_tai_khoan, $mat_khau, $email, $dia_chi, $so_dien_thoai);
+                
+                        $thongbao = 'Cập nhật tài khoản thành công';
+                    }
+                    include "views/suataikhoan.php";
+                    break;
+                
+                
+                
         default:
             include "views/home.php"; // Hiển thị trang chủ khi không có hành động nào
             break;

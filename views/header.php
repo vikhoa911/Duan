@@ -54,23 +54,24 @@
                         </li>
                         <!-- Đơn hàng của tôi -->
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?act=giohang"><i class="fas fa-list"></i> Đơn hàng</a>
+                            <a class="nav-link" href="index.php?act=giohang"><i class="fas fa-list"></i> Giỏ hàng</a>
                         </li>
+                        <li class="nav-item">
+    <a class="nav-link" href="index.php?act=suatk&id_tai_khoan=<?php echo $_SESSION['ten_dang_nhap']['id_tai_khoan']; ?>"><i class="fas fa-user"></i> Tài khoản</a>
+</li>
+
                         <!-- Đăng xuất -->
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=thoat"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
                         </li>
                         <!-- Đăng nhập admin nếu vai trò là admin -->
                         <?php
-                        if ($vai_tro == 1) {
-                        ?>
+                        if ($vai_tro == 1) {?>
                             <li class="nav-item">
                                 <a class="nav-link" href="admin/index.php"><i class="fas fa-user-shield"></i> Admin</a>
                             </li>
                         <?php } ?>
-                    <?php
-                    } else {
-                    ?>
+                    <?php } else {?>
                         <!-- Nếu chưa đăng nhập -->
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=dangnhap"><i class="fas fa-user"></i> Đăng nhập</a>
@@ -78,7 +79,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=dangky"><i class="fas fa-user-plus"></i> Đăng ký</a>
                         </li>
-                    <?php } ?>
+                    <?php }?>
                 </ul>
             </div>
         </div>

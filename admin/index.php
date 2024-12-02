@@ -5,6 +5,7 @@ include "../models/sanpham.php";
 include "../models/danhmuc.php";
 include "../models/taikhoan.php";
 include "../models/binhluan.php";
+include "../models/giohang.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -178,7 +179,41 @@ include "../models/binhluan.php";
                             $listbinhluan = loadall_binhluan(0); // Lấy lại danh sách sau khi xóa
                             include "binhluan/hienthibl.php";
                             break;
-                        
+                    case 'hienthidonhang':
+                                if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
+                                    $kyw=$_POST['kyw'];
+                                }else{
+                                    $kyw="";
+                                }
+                                $listdon_hang=loadall_don_hang($kyw,0);
+                                    include "donhang/hienthidh.php";
+                                break;
+                                case 'suadonhang':
+                                    if (isset($_GET['id_don_hang']) && ($_GET['id_don_hang'] > 0)) {
+                                        $don_hang = loadone_don_hang($_GET['id_don_hang']);
+                                    }
+                                    include "donhang/suadonhang.php";
+                                    break;
+                                
+                                case 'updatedonhang':
+                                    if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                                        $id_don_hang = $_POST['id_don_hang'];
+                                        $trang_thai_don_hang = $_POST['trang_thai_don_hang']; // Chỉ cần trường bill_status
+                                        
+                                        update_don_hang_status($id_don_hang, $trang_thai_don_hang); // Sử dụng hàm update_bill_status để chỉ cập nhật trạng thái đơn hàng
+                                        $thongbao = 'Cập nhật trạng thái đơn hàng thành công!';
+                                    }
+                                    $listdon_hang = loadall_don_hang("", 0);
+                                    include "donhang/hienthidh.php";
+                                    break;
+                                    case 'xemdonhang':
+                                        if (isset($_GET['id_don_hang']) && ($_GET['id_don_hang'] > 0)) {
+                                            $don_hang = loadone_don_hang($_GET['id_don_hang']);
+                                            $chitiet_don_hang = loadall_chitiet_don_hang($_GET['id_don_hang']);
+                                        }
+                                        include "donhang/donhangchitiet.php";
+                                        break;
+                                    
             default:
                 include "home.php";
                 break;

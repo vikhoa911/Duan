@@ -19,6 +19,12 @@ function update_tai_khoan($id_tai_khoan, $ten_dang_nhap, $email, $dia_chi, $so_d
     pdo_execute($sql, $email, $dia_chi, $so_dien_thoai, $vai_tro, $id_tai_khoan);
 }
 
+function sua_tai_khoan($id_tai_khoan, $mat_khau, $email, $dia_chi, $so_dien_thoai) {
+    $sql = "UPDATE tai_khoan 
+            SET mat_khau = ?, email = ?, dia_chi = ?, so_dien_thoai = ? 
+            WHERE id_tai_khoan = ?";
+    pdo_execute($sql, $mat_khau, $email, $dia_chi, $so_dien_thoai, $id_tai_khoan);
+}
 
 // Hàm xóa tài khoản
 function delete_tai_khoan($id_tai_khoan){
