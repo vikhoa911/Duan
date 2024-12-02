@@ -214,7 +214,7 @@ $thanhtien = $soluong * $gia; // Phép nhân hợp lệ
                 
                         $thongbao = 'Cập nhật tài khoản thành công';
                     }
-                    include "views/suataikhoan.php";
+                    include "views/suathanhcong.php";
                     break;
                 
                 
