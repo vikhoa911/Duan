@@ -15,7 +15,7 @@
             <input type="text" id="ten_danh_muc" name="ten_danh_muc" class="form-control" placeholder="Nhập tên danh mục" required>
         </div>
         <div class="d-flex gap-2">
-            <button type="submit" name="themmoi" class="btn btn-primary">THÊM MỚI</button>
+            <input type="submit" name="themmoi" class="btn btn-primary"></input>
             <button type="reset" class="btn btn-secondary">NHẬP LẠI</button>
         </div>
         <?php 

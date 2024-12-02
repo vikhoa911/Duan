@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 24, 2024 at 08:23 AM
+-- Generation Time: Dec 02, 2024 at 07:30 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -30,80 +30,47 @@ SET time_zone = "+00:00";
 CREATE TABLE `binh_luan` (
   `id_san_pham` int NOT NULL,
   `id_tai_khoan` int NOT NULL,
-  `id_binh_luan` int DEFAULT NULL,
+  `id_binh_luan` int NOT NULL,
   `danh_gia` int NOT NULL,
   `noi_dung` varchar(255) NOT NULL,
   `thoi_gian` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `chi_tiet_don_hang`
---
-
-CREATE TABLE `chi_tiet_don_hang` (
-  `id_chi_tiet` int NOT NULL,
-  `id_don_hang` int NOT NULL,
-  `id_san_pham` int NOT NULL,
-  `so_luong` int NOT NULL,
-  `gia_tien` varchar(255) NOT NULL,
-  `ten_san_pham` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `danh_muc`
---
 
 CREATE TABLE `danh_muc` (
   `id_danh_muc` int NOT NULL,
   `ten_danh_muc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `danh_muc`
---
-
-INSERT INTO `danh_muc` (`id_danh_muc`, `ten_danh_muc`) VALUES
-(1, 'Nam'),
-(2, 'Nữ'),
-(3, 'Khác'),
-(4, 'qu'),
-(5, 'a'),
-(6, 'ă');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `don_hang`
---
-
 CREATE TABLE `don_hang` (
   `id_don_hang` int NOT NULL,
-  `id_tai_khoan` int NOT NULL,
-  `tong_so_tien` int NOT NULL,
-  `trang_thai` varchar(255) NOT NULL,
-  `ngay_dat_hang` date NOT NULL,
-  `ngay_cap_nhat` date NOT NULL
+  `id_tai_khoan` int DEFAULT '0',
+  `ten_don_hang` varchar(255) NOT NULL,
+  `dia_chi_don_hang` varchar(255) NOT NULL,
+  `so_dien_thoai_don_hang` varchar(50) NOT NULL,
+  `email_don_hang` varchar(100) NOT NULL,
+  `thanh_toan_don_hang` int NOT NULL DEFAULT '1' COMMENT '1.Thanh toán trực tiếp 2.Chuyển khoản 3.Thanh toán online	',
+  `tong_tien_don_hang` int NOT NULL DEFAULT '0',
+  `trang_thai_don_hang` int DEFAULT '0' COMMENT '0.Đơn hàng mới 1.Đang chờ 2.Đang giao hàng 3.Đã giao hàng',
+  `ten_nhan` varchar(255) DEFAULT NULL,
+  `dia_chi_nhan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `so_dien_thoai_nhan` varchar(10) DEFAULT NULL,
+  `ngay_dat_hang` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `gio_hang`
---
 
 CREATE TABLE `gio_hang` (
   `id_gio_hang` int NOT NULL,
   `id_tai_khoan` int NOT NULL,
   `id_san_pham` int NOT NULL,
-  `so_luong` int NOT NULL,
-  `ten_san_pham` varchar(255) NOT NULL
+  `so_luong` int NOT NULL DEFAULT '1',
+  `ten_san_pham` varchar(255) NOT NULL,
+  `hinh` varchar(255) DEFAULT NULL,
+  `gia` varchar(255) NOT NULL,
+  `soluong` int DEFAULT '1',
+  `thanhtien` int NOT NULL,
+  `id_don_hang` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `san_pham`
@@ -118,21 +85,6 @@ CREATE TABLE `san_pham` (
   `id_danh_muc` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `san_pham`
---
-
-INSERT INTO `san_pham` (`id_san_pham`, `ten_san_pham`, `hinh`, `mo_ta`, `gia`, `id_danh_muc`) VALUES
-(5, 'Test cập nhật', 'ps5.jpg', '5', '500', 1),
-(6, 'Quần', 'pexels-anna-butusova-3920323-5846162.jpg', 'ădawd', '1', 2),
-(7, 'Áo', '462547600_3960463844183400_2851080513901178453_n-1024x1024.jpeg', 'dfbf', '222', 1),
-(8, 'Áo', '462544094_466024773120152_4837345997441638002_n-300x300.jpeg', 'ăf', '111', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tai_khoan`
---
 
 CREATE TABLE `tai_khoan` (
   `id_tai_khoan` int NOT NULL,
@@ -144,33 +96,15 @@ CREATE TABLE `tai_khoan` (
   `vai_tro` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `tai_khoan`
---
 
-INSERT INTO `tai_khoan` (`id_tai_khoan`, `ten_dang_nhap`, `mat_khau`, `email`, `so_dien_thoai`, `dia_chi`, `vai_tro`) VALUES
-(13, 'giapvietkhoa', '1', 'giapvietkhoa@gmail.com', NULL, NULL, 0),
-(14, 'buixuantung11', '1', 'giapvietkh11oa@gmail.com', NULL, NULL, 0),
-(15, 'giapvietk9hoa', '12', 'giapviet9khoa@gmail.com', NULL, NULL, 0);
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `binh_luan`
 --
 ALTER TABLE `binh_luan`
+  ADD PRIMARY KEY (`id_binh_luan`),
   ADD KEY `binhluan_sanpham` (`id_san_pham`),
   ADD KEY `binhluan_taikhoan` (`id_tai_khoan`);
-
---
--- Indexes for table `chi_tiet_don_hang`
---
-ALTER TABLE `chi_tiet_don_hang`
-  ADD PRIMARY KEY (`id_chi_tiet`),
-  ADD KEY `chitiet_donhang` (`id_don_hang`),
-  ADD KEY `chitiet_sanpham` (`id_san_pham`);
 
 --
 -- Indexes for table `danh_muc`
@@ -188,8 +122,10 @@ ALTER TABLE `don_hang`
 -- Indexes for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
+  ADD PRIMARY KEY (`id_gio_hang`),
   ADD KEY `giohang_taikhoan` (`id_tai_khoan`),
-  ADD KEY `giohang_sanpham` (`id_san_pham`);
+  ADD KEY `giohang_sanpham` (`id_san_pham`),
+  ADD KEY `giohang_donhang` (`id_don_hang`);
 
 --
 -- Indexes for table `san_pham`
@@ -210,34 +146,40 @@ ALTER TABLE `tai_khoan`
 --
 
 --
--- AUTO_INCREMENT for table `chi_tiet_don_hang`
+-- AUTO_INCREMENT for table `binh_luan`
 --
-ALTER TABLE `chi_tiet_don_hang`
-  MODIFY `id_chi_tiet` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `binh_luan`
+  MODIFY `id_binh_luan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `danh_muc`
 --
 ALTER TABLE `danh_muc`
-  MODIFY `id_danh_muc` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_danh_muc` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `id_don_hang` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_don_hang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+
+--
+-- AUTO_INCREMENT for table `gio_hang`
+--
+ALTER TABLE `gio_hang`
+  MODIFY `id_gio_hang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `san_pham`
 --
 ALTER TABLE `san_pham`
-  MODIFY `id_san_pham` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_san_pham` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `tai_khoan`
 --
 ALTER TABLE `tai_khoan`
-  MODIFY `id_tai_khoan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_tai_khoan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- Constraints for dumped tables
@@ -251,16 +193,10 @@ ALTER TABLE `binh_luan`
   ADD CONSTRAINT `binhluan_taikhoan` FOREIGN KEY (`id_tai_khoan`) REFERENCES `tai_khoan` (`id_tai_khoan`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `chi_tiet_don_hang`
---
-ALTER TABLE `chi_tiet_don_hang`
-  ADD CONSTRAINT `chitiet_donhang` FOREIGN KEY (`id_don_hang`) REFERENCES `don_hang` (`id_don_hang`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `chitiet_sanpham` FOREIGN KEY (`id_san_pham`) REFERENCES `san_pham` (`id_san_pham`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
 -- Constraints for table `gio_hang`
 --
 ALTER TABLE `gio_hang`
+  ADD CONSTRAINT `giohang_donhang` FOREIGN KEY (`id_don_hang`) REFERENCES `don_hang` (`id_don_hang`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `giohang_sanpham` FOREIGN KEY (`id_san_pham`) REFERENCES `san_pham` (`id_san_pham`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `giohang_taikhoan` FOREIGN KEY (`id_tai_khoan`) REFERENCES `tai_khoan` (`id_tai_khoan`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 

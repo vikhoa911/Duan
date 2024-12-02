@@ -54,7 +54,8 @@
                         </li>
                         <!-- Đơn hàng của tôi -->
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?act=giohang"><i class="fas fa-list"></i> Giỏ hàng</a>
+                            <a class="nav-link" href="index.php?act=giohang"><i class="fas fa-shopping-cart"></i>
+                            Giỏ hàng</a>
                         </li>
                         <li class="nav-item">
     <a class="nav-link" href="index.php?act=suatk&id_tai_khoan=<?php echo $_SESSION['ten_dang_nhap']['id_tai_khoan']; ?>"><i class="fas fa-user"></i> Tài khoản</a>
