@@ -19,7 +19,7 @@ $products = loadall_san_pham("", $id_danh_muc);
                     <img src="images/<?= $sanpham['hinh']; ?>" alt="<?= $sanpham['ten_san_pham']; ?>" class="w-full h-auto object-cover rounded-lg">
                 </div>
                 <div class="lg:w-1/2 lg:pl-10 mt-6 lg:mt-0">
-                    <h1 class="text-3xl font-bold mb-4">Tên sản phẩm: <?= $sanpham['ten_san_pham']; ?></h1>
+                    <h1 class="text-3xl font-bold mb-4"><?= $sanpham['ten_san_pham']; ?></h1>
                     <p class="text-gray-800 text-xl font-semibold mb-3 mt-3"><strong>Giá:</strong> <?= number_format($sanpham['gia']); ?>USD</p>
                     <form action="index.php?act=themgiohang" method="post">
                         <input type="hidden" name="id_san_pham" value="<?= $sanpham['id_san_pham']; ?>">
