@@ -1,5 +1,7 @@
 <?php
 session_start();
+define('BASEURL','http://localhost/Duan');
+
 include "models/config.php";
 include "models/taikhoan.php";
 include "models/giohang.php";
@@ -48,7 +50,8 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
         
         case 'thoat':
             session_destroy();
-            header('Location: index.php');
+            // header('Location: index.php');
+            echo '<script>window.location='.BASEURL.'</script>';
             break;
         
         case 'dangky':
