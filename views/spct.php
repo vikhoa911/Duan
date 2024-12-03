@@ -38,7 +38,7 @@ $products = loadall_san_pham("", $id_danh_muc);
                 <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                     <?php if (!empty($products)): ?>
                         <?php foreach ($products as $product): ?>
-                            <?php 
+                            <?php
                             // Bỏ qua sản phẩm hiện tại
                             if ($product['id_san_pham'] == $id_san_pham_hien_tai) {
                                 continue;
@@ -72,4 +72,5 @@ $products = loadall_san_pham("", $id_danh_muc);
         <?php endif; ?>
     </div>
 </body>
+
 </html>

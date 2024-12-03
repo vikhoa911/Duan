@@ -4,17 +4,17 @@
         <h2>Sản phẩm dành cho nam</h2>
         <div class="product-grid">
             <?php
-    include 'models/sanpham.php';
-    $img_path = "images/";
-    $id_danh_muc = 1;
-    $products = loadall_san_pham("", $id_danh_muc);
+            include 'models/sanpham.php';
+            $img_path = "images/";
+            $id_danh_muc = 1;
+            $products = loadall_san_pham("", $id_danh_muc);
 
-    if (!empty($products)) { 
-        foreach ($products as $product) {
-            extract($product);
-            $hinh_full_path = $img_path . $hinh;
-            $linksp = "index.php?act=chitietsp&id_san_pham=" . $id_san_pham;
-            echo '
+            if (!empty($products)) {
+                foreach ($products as $product) {
+                    extract($product);
+                    $hinh_full_path = $img_path . $hinh;
+                    $linksp = "index.php?act=chitietsp&id_san_pham=" . $id_san_pham;
+                    echo '
                 <div class="product-item card text-center">
     <a href="' . $linksp . '">
         <img class="card-img-top" src="' . $hinh_full_path . '" alt="' . htmlspecialchars($ten_san_pham) . '">
@@ -34,11 +34,11 @@
 </div>
 
             ';
-        }
-    } else {
-        echo "<p>Không có sản phẩm nào trong danh mục này.</p>";
-    }
-?>
+                }
+            } else {
+                echo "<p>Không có sản phẩm nào trong danh mục này.</p>";
+            }
+            ?>
 
         </div>
     </section>

@@ -7,7 +7,8 @@ $tongTien = tinhTongTien();
     <!-- Cart Table -->
     <div class="overflow-hidden border rounded-lg shadow-sm bg-light">
         <table class="w-full text-left border-collapse">
-            <?php echo $listGioHang; // Hiển thị danh sách giỏ hàng ?>
+            <?php echo $listGioHang; // Hiển thị danh sách giỏ hàng 
+            ?>
         </table>
     </div>
 

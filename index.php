@@ -150,7 +150,7 @@ $thanhtien = $soluong * $gia; // Phép nhân hợp lệ
                     $dia_chi = $_POST['dia_chi'];
                     $so_dien_thoai = $_POST['so_dien_thoai'];
                     $thanh_toan_don_hang = $_POST['thanh_toan_don_hang'];
-                    $ngaydathang = date('h:i:sa d/m/Y');
+                    $ngay_dat_hang = date('h:i:sa d/m/Y');
                     $tongdonhang = tongdonhang();
             
                     // Thêm thông tin người nhận
@@ -159,7 +159,7 @@ $thanhtien = $soluong * $gia; // Phép nhân hợp lệ
                     $so_dien_thoai_nhan = $_POST['so_dien_thoai'];  // Số điện thoại nhận hàng
             
                     // Lưu thông tin đơn hàng
-                    $id_don_hang = insert_don_hang($id_tai_khoan, $ten_dang_nhap, $email, $dia_chi, $so_dien_thoai, $thanh_toan_don_hang, $ngaydathang, $tongdonhang, $ten_nhan, $dia_chi_nhan, $so_dien_thoai_nhan);
+                    $id_don_hang = insert_don_hang($id_tai_khoan, $ten_dang_nhap, $email, $dia_chi, $so_dien_thoai, $thanh_toan_don_hang, $ngay_dat_hang, $tongdonhang, $ten_nhan, $dia_chi_nhan, $so_dien_thoai_nhan);
             
                     // Lưu chi tiết đơn hàng
                     foreach ($_SESSION['mycart'] as $cart) {
@@ -215,7 +215,23 @@ $thanhtien = $soluong * $gia; // Phép nhân hợp lệ
                         $thongbao = 'Cập nhật tài khoản thành công';
                     }
                     include "views/suathanhcong.php";
-                    break;
+                    case 'donhangcuatoi':
+                        if (isset($_SESSION['ten_dang_nhap'])) {
+                            $id_tai_khoan = $_SESSION['ten_dang_nhap']['id_tai_khoan']; // Lấy id tài khoản từ session
+                        } else {
+                            $id_tai_khoan = 0;
+                        }
+                    
+                        if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                            $kyw = $_POST['kyw'];
+                        } else {
+                            $kyw = "";
+                        }
+                    
+                        // Lấy danh sách đơn hàng theo tài khoản
+                        $listdon_hang = loadall_don_hang_kh($kyw, $id_tai_khoan);
+                        include "views/donhangcuatoi.php";
+                        break;
                 
                 
                 

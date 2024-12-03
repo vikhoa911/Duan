@@ -12,59 +12,59 @@ $tongTien = tinhTongTien();           // Hàm này trả về tổng tiền
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Thông tin đặt hàng -->
             <div>
-                <?php 
-                    if (isset($_SESSION['ten_dang_nhap'])) {
-                        $ten_dang_nhap = $_SESSION['ten_dang_nhap']['ten_dang_nhap'] ?? "";
-                        $email = $_SESSION['ten_dang_nhap']['email'] ?? "";
-                        $dia_chi = $_SESSION['ten_dang_nhap']['dia_chi'] ?? "";
-                        $so_dien_thoai = $_SESSION['ten_dang_nhap']['so_dien_thoai'] ?? "";
-                    } else {
-                        $ten_dang_nhap = "";
-                        $email = "";
-                        $dia_chi = "";
-                        $so_dien_thoai = "";
-                    }
+                <?php
+                if (isset($_SESSION['ten_dang_nhap'])) {
+                    $ten_dang_nhap = $_SESSION['ten_dang_nhap']['ten_dang_nhap'] ?? "";
+                    $email = $_SESSION['ten_dang_nhap']['email'] ?? "";
+                    $dia_chi = $_SESSION['ten_dang_nhap']['dia_chi'] ?? "";
+                    $so_dien_thoai = $_SESSION['ten_dang_nhap']['so_dien_thoai'] ?? "";
+                } else {
+                    $ten_dang_nhap = "";
+                    $email = "";
+                    $dia_chi = "";
+                    $so_dien_thoai = "";
+                }
                 ?>
                 <h2 class="text-xl font-semibold mb-6">Thông tin đặt hàng</h2>
                 <form class="space-y-4" action="index.php?act=dat_hang" method="post">
-    <!-- Full Name and Phone Number -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-            <label for="ten_dang_nhap" class="block text-sm font-medium text-gray-700">Họ và tên:</label>
-            <input type="text" id="ten_dang_nhap" name="ten_dang_nhap" value="<?= htmlspecialchars($ten_dang_nhap); ?>" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required />
-        </div>
-        <div>
-            <label for="so_dien_thoai" class="block text-sm font-medium text-gray-700">Số điện thoại:</label>
-            <input type="text" id="so_dien_thoai" name="so_dien_thoai" value="<?= htmlspecialchars($so_dien_thoai); ?>" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required />
-        </div>
-    </div>
-    <!-- Address -->
-    <div>
-        <label for="dia_chi" class="block text-sm font-medium text-gray-700">Địa chỉ:</label>
-        <input type="text" id="dia_chi" name="dia_chi" value="<?= htmlspecialchars($dia_chi); ?>" placeholder="Địa chỉ nhận hàng" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required />
-    </div>
-    <!-- Email -->
-    <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
-        <input type="email" id="email" name="email" value="<?= htmlspecialchars($email); ?>" placeholder="Email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required />
-    </div>
-    <!-- Payment Method -->
-    <div>
-        <label for="thanh_toan_don_hang" class="block text-sm font-medium text-gray-700">Phương thức thanh toán:</label>
-        <select id="thanh_toan_don_hang" name="thanh_toan_don_hang" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required>
-            <option value="1">Thanh toán khi nhận hàng</option>
-            <option value="2">Chuyển khoản</option>
-            <option value="3">Thanh toán Online</option>
-        </select>
-    </div>
-    <!-- Additional Notes -->
-    <div>
-        <label for="additional-info" class="block text-sm font-medium text-gray-700">Ghi chú:</label>
-        <textarea id="additional-info" name="ghi_chu" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"></textarea>
-    </div>
-    <!-- Submit Button -->
-    <button type="submit" name="dongydathang" value="1" class="w-full mt-6 py-2 px-4 bg-gray-900 text-white rounded-lg shadow hover:bg-black">Đặt hàng</button>
-</form>
+                    <!-- Full Name and Phone Number -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="ten_dang_nhap" class="block text-sm font-medium text-gray-700">Họ và tên:</label>
+                            <input type="text" id="ten_dang_nhap" name="ten_dang_nhap" value="<?= htmlspecialchars($ten_dang_nhap); ?>" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required />
+                        </div>
+                        <div>
+                            <label for="so_dien_thoai" class="block text-sm font-medium text-gray-700">Số điện thoại:</label>
+                            <input type="text" id="so_dien_thoai" name="so_dien_thoai" value="<?= htmlspecialchars($so_dien_thoai); ?>" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required />
+                        </div>
+                    </div>
+                    <!-- Address -->
+                    <div>
+                        <label for="dia_chi" class="block text-sm font-medium text-gray-700">Địa chỉ:</label>
+                        <input type="text" id="dia_chi" name="dia_chi" value="<?= htmlspecialchars($dia_chi); ?>" placeholder="Địa chỉ nhận hàng" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required />
+                    </div>
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+                        <input type="email" id="email" name="email" value="<?= htmlspecialchars($email); ?>" placeholder="Email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required />
+                    </div>
+                    <!-- Payment Method -->
+                    <div>
+                        <label for="thanh_toan_don_hang" class="block text-sm font-medium text-gray-700">Phương thức thanh toán:</label>
+                        <select id="thanh_toan_don_hang" name="thanh_toan_don_hang" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" required>
+                            <option value="1">Thanh toán khi nhận hàng</option>
+                            <option value="2">Chuyển khoản</option>
+                            <option value="3">Thanh toán Online</option>
+                        </select>
+                    </div>
+                    <!-- Additional Notes -->
+                    <div>
+                        <label for="additional-info" class="block text-sm font-medium text-gray-700">Ghi chú:</label>
+                        <textarea id="additional-info" name="ghi_chu" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"></textarea>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" name="dongydathang" value="1" class="w-full mt-6 py-2 px-4 bg-gray-900 text-white rounded-lg shadow hover:bg-black">Đặt hàng</button>
+                </form>
 
             </div>
 
@@ -83,7 +83,7 @@ $tongTien = tinhTongTien();           // Hàm này trả về tổng tiền
                         </thead>
                         <tbody>
                             <!-- Hiển thị các mục giỏ hàng -->
-                            <?php echo $listGioHang; ?>  <!-- Hiển thị chuỗi HTML từ hàm layDanhSachGioHang() -->
+                            <?php echo $listGioHang; ?> <!-- Hiển thị chuỗi HTML từ hàm layDanhSachGioHang() -->
                         </tbody>
                     </table>
 

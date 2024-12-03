@@ -34,7 +34,7 @@
             <!-- Tracking Order Section -->
             <div class="col-md-3">
                 <h5>Tracking Your Order</h5>
-                <p>Nhập email, mã đơn hàng hoặc số điện thoại để tìm kiếm đơn hàng của bạn.</p>
+                <p>Nhập email gửi hỗ trợ</p>
                 <form class="d-flex">
                     <input type="email" class="form-control me-2" placeholder="you@example.com">
                     <button class="btn btn-outline-light">Tìm kiếm</button>
@@ -62,4 +62,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"></script>
 </body>
+
 </html>

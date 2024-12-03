@@ -71,7 +71,7 @@ $don_hang = [
                                 </tr>
                             <?php endforeach;
                             $_SESSION['mycart'] = [];
-                             ?>
+                            ?>
                         </tbody>
                     </table>
                     <hr class="my-4">

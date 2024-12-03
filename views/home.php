@@ -1,7 +1,3 @@
-
-
-
-
 <section class="banner text-center">
     <div class="container d-flex align-items-center justify-content-between">
         <div class="banner-text">

@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                    <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Trang chủ</a>
+                        <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Trang chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?act=nam">Đồ Nam</a>
@@ -56,11 +56,15 @@
                         <!-- Đơn hàng của tôi -->
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=giohang"><i class="fas fa-shopping-cart"></i>
-                            Giỏ hàng</a>
+                                Giỏ hàng</a>
                         </li>
                         <li class="nav-item">
-    <a class="nav-link" href="index.php?act=suatk&id_tai_khoan=<?php echo $_SESSION['ten_dang_nhap']['id_tai_khoan']; ?>"><i class="fas fa-user"></i> Tài khoản</a>
-</li>
+                            <a class="nav-link" href="index.php?act=donhangcuatoi"><i class="fas fa-list"></i>
+                                Đơn hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?act=suatk&id_tai_khoan=<?php echo $_SESSION['ten_dang_nhap']['id_tai_khoan']; ?>"><i class="fas fa-user"></i> Tài khoản</a>
+                        </li>
 
                         <!-- Đăng xuất -->
                         <li class="nav-item">
@@ -68,12 +72,12 @@
                         </li>
                         <!-- Đăng nhập admin nếu vai trò là admin -->
                         <?php
-                        if ($vai_tro == 1) {?>
+                        if ($vai_tro == 1) { ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="admin/index.php"><i class="fas fa-user-shield"></i> Admin</a>
                             </li>
                         <?php } ?>
-                    <?php } else {?>
+                    <?php } else { ?>
                         <!-- Nếu chưa đăng nhập -->
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=dangnhap"><i class="fas fa-user"></i> Đăng nhập</a>
@@ -81,7 +85,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=dangky"><i class="fas fa-user-plus"></i> Đăng ký</a>
                         </li>
-                    <?php }?>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
