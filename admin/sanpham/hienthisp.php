@@ -58,7 +58,7 @@
                         <td>' . $ten_san_pham . '</td>
                         <td>' . $hinh . '</td>
                         <td>' . $mo_ta . '</td>
-                        <td>' . number_format($gia, 0, ',', '.') . ' VND</td>
+                        <td>' . number_format($gia, 0, ',', '.') . ' USD</td>
                         <td>
                             <a href="' . $suasp . '" class="btn btn-warning btn-sm">Sửa</a>
                             <a href="' . $xoasp . '" class="btn btn-danger btn-sm ms-2">Xóa</a>

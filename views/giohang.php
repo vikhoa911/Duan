@@ -20,7 +20,7 @@ $tongTien = tinhTongTien();
             <div class="space-y-4">
                 <div class="flex justify-between items-center">
                     <span class="font-bold">Tổng tiền</span>
-                    <span class="total-price text-lg font-bold"><?php echo number_format($tongTien, 0, ',', '.'); ?> VND</span>
+                    <span class="total-price text-lg font-bold"><?php echo number_format($tongTien, 0, ',', '.'); ?> USD</span>
                 </div>
                 <a href="index.php?act=thanhtoan">
                     <input class="w-full mt-4 bg-black text-white py-3 rounded-lg hover:bg-gray-800" type="button" value="TIẾP TỤC ĐẶT HÀNG">

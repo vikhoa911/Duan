@@ -77,7 +77,7 @@ $don_hang = [
                     <hr class="my-4">
                     <div class="flex justify-between items-center">
                         <span class="font-bold">Tổng cộng</span>
-                        <span class="text-lg font-bold text-yellow-500"><?= number_format($tongTien, 0, ',', '.'); ?> VND</span>
+                        <span class="text-lg font-bold text-yellow-500"><?= number_format($tongTien, 0, ',', '.'); ?> USD</span>
                     </div>
                 </div>
             </div>
