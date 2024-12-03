@@ -24,7 +24,7 @@
                                     <td>' . htmlspecialchars($don_hang['id_don_hang']) . '</td>
                                     <td>' . htmlspecialchars($don_hang['ngay_dat_hang']) . '</td>
                                     <td>' . (isset($countsp) ? htmlspecialchars($countsp) : 'N/A') . '</td>
-                                    <td><strong>' . number_format($don_hang['tong_tien_don_hang'], 0, ',', '.') . ' VNĐ</strong></td>
+                                    <td><strong>' . number_format($don_hang['tong_tien_don_hang'], 0, ',', '.') . ' USD</strong></td>
                                     <td>' . htmlspecialchars($ttdh) . '</td>
                                 </tr>';
                             }

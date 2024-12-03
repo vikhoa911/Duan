@@ -43,9 +43,9 @@ $img_path = "../images/"; // Thư mục chứa hình ảnh sản phẩm
                             echo '<td>' . $item['id_san_pham'] . '</td>';
                             echo '<td>' . $item['ten_san_pham'] . '</td>';
                             echo '<td><img src="' . $hinh_full_path . '" alt="' . $item['ten_san_pham'] . '" class="img-fluid" style="max-width: 100px;"></td>';
-                            echo '<td>' . number_format($item['gia'], 0, ',', '.') . ' VND</td>';
+                            echo '<td>' . number_format($item['gia'], 0, ',', '.') . ' USD</td>';
                             echo '<td>' . $item['so_luong'] . '</td>';
-                            echo '<td>' . number_format($item['thanhtien'], 0, ',', '.') . ' VND</td>';
+                            echo '<td>' . number_format($item['thanhtien'], 0, ',', '.') . ' USD</td>';
                             echo '</tr>';
                         }
                         ?>

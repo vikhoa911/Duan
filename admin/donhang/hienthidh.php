@@ -26,7 +26,7 @@
                             $suadonhang = "index.php?act=suadonhang&id_don_hang=" . $don_hang['id_don_hang'];
                             $xemdonhang = "index.php?act=xemdonhang&id_don_hang=" . $don_hang['id_don_hang'];
                             $kh = $don_hang["ten_don_hang"] . '
-                                <br>' . $don_hang["email_don_hang"] . '
+                                <br>' . $don_hang["email_don_hang"] . 'w
                                 <br>' . $don_hang["dia_chi_don_hang"] . '
                                 <br>' . $don_hang["so_dien_thoai_don_hang"];
                             $ttdh = get_ttdh($don_hang["trang_thai_don_hang"]);
@@ -35,7 +35,7 @@
                                 <td>' . $don_hang['id_don_hang'] . '</td>
                                 <td>' . $kh . '</td>
                                 <td>' . $countsp . '</td>
-                                <td><strong>' . number_format($don_hang['tong_tien_don_hang'], 0, ',', '.') . ' VNĐ</strong></td>
+                                <td><strong>' . number_format($don_hang['tong_tien_don_hang'], 0, ',', '.') . ' USD</strong></td>
                                 <td>' . $ttdh . '</td>
                                 <td>' . $don_hang["ngay_dat_hang"] . '</td>
                                 <td>

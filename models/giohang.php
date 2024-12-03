@@ -61,12 +61,12 @@ function layDanhSachGioHang($del) {
                         <img src="' . $hinh_full_path . '" alt="Product Image" class="w-16 h-16 rounded-lg">
                         <span class="product-name">' . htmlspecialchars($cart[1]) . '</span>
                     </td>
-                    <td class="px-6 py-4" data-price="' . htmlspecialchars($cart[3]) . '">' . number_format($cart[3], 0, ',', '.') . ' VND</td>
+                    <td class="px-6 py-4" data-price="' . htmlspecialchars($cart[3]) . '">' . number_format($cart[3], 0, ',', '.') . ' USD</td>
                     <td class="px-6 py-4">
                     ' . $soluong . '
                         
                     </td>
-                    <td class="px-6 py-4 product-total">' . number_format($thanhtien, 0, ',', '.') . ' VND</td>
+                    <td class="px-6 py-4 product-total">' . number_format($thanhtien, 0, ',', '.') . ' USD</td>
                     <td class="px-6 py-4 text-center">
                         <form action="index.php?act=remove_cart" method="post">
                             <input type="hidden" name="cart_id" value="' . htmlspecialchars($cart[0]) . '">

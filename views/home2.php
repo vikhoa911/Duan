@@ -45,7 +45,7 @@ $products = loadall_san_pham("", $id_danh_muc);
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold text-gray-800 truncate"><?= htmlspecialchars($product['ten_san_pham']) ?></h3>
                                 <p class="text-sm text-gray-500 mt-2"><?= htmlspecialchars($product['mo_ta']) ?></p>
-                                <p class="text-red-500 font-bold mt-4">Giá: <?= htmlspecialchars(number_format($product['gia'])) ?> VNĐ</p>
+                                <p class="text-red-500 font-bold mt-4">Giá: <?= htmlspecialchars(number_format($product['gia'])) ?> USD</p>
                             </div>
                         </a>
                         <div class="p-4 flex justify-center">

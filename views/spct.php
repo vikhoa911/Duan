@@ -20,7 +20,7 @@ $products = loadall_san_pham("", $id_danh_muc);
                 </div>
                 <div class="lg:w-1/2 lg:pl-10 mt-6 lg:mt-0">
                     <h1 class="text-3xl font-bold mb-4">Tên sản phẩm: <?= $sanpham['ten_san_pham']; ?></h1>
-                    <p class="text-gray-800 text-xl font-semibold mb-3 mt-3"><strong>Giá:</strong> <?= number_format($sanpham['gia']); ?>VNĐ</p>
+                    <p class="text-gray-800 text-xl font-semibold mb-3 mt-3"><strong>Giá:</strong> <?= number_format($sanpham['gia']); ?>USD</p>
                     <form action="index.php?act=themgiohang" method="post">
                         <input type="hidden" name="id_san_pham" value="<?= $sanpham['id_san_pham']; ?>">
                         <input type="hidden" name="ten_san_pham" value="<?= $sanpham['ten_san_pham']; ?>">
@@ -54,7 +54,7 @@ $products = loadall_san_pham("", $id_danh_muc);
                                     </div>
                                     <div class="p-4">
                                         <h3 class="text-lg font-semibold text-gray-800 truncate"><?= htmlspecialchars($product['ten_san_pham']) ?></h3>
-                                        <p class="text-red-500 font-bold mt-1">Giá: <?= htmlspecialchars(number_format($product['gia'])) ?> VNĐ</p>
+                                        <p class="text-red-500 font-bold mt-1">Giá: <?= htmlspecialchars(number_format($product['gia'])) ?> USD</p>
                                     </div>
                                 </a>
                                 <div class="p-4 flex justify-center">

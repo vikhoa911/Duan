@@ -30,7 +30,7 @@
     </a>
     <div class="card-body">
         <h4 class="card-title">' . htmlspecialchars($ten_san_pham) . '</h4>
-        <p class="price">' . number_format($gia, 0) . ' VNĐ</p>
+        <p class="price">' . number_format($gia, 0) . ' USD</p>
         <form action="index.php?act=themgiohang" method="post" class="mt-3">
             <input type="hidden" name="id_san_pham" value="' . $id_san_pham . '">
             <input type="hidden" name="ten_san_pham" value="' . htmlspecialchars($ten_san_pham) . '">
