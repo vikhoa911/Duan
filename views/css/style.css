@@ -1,3 +1,6 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
 .navbar-brand {
     font-weight: bold;
     font-size: 24px;
@@ -33,6 +36,15 @@
     max-width: 2000px;
     max-height: 485px;
     object-fit: cover;
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+p, input, form {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300; /* Nhẹ nhàng, mềm mại */
 }
 
 .banner-text h1 {

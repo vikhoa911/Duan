@@ -1,5 +1,7 @@
 
-
+body {
+    font-family: 'Poppins', sans-serif;
+}
 .related-products {
     text-align: center;
     padding: 20px ;
