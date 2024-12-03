@@ -26,38 +26,41 @@ $products = loadall_san_pham("", $id_danh_muc);
 
     <!-- Flash Sales Section -->
     <div class="flash-sales">
-        <h2 style="font-size: 30px; font-weight: bolder;">Flash sale</h2>
-        <br>
-        <hr>
-        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            <?php if (!empty($products)): ?>
-                <?php foreach ($products as $product): ?>
-                    <?php
-                    // Tạo đường dẫn hình ảnh và link sản phẩm
-                    $hinh_full_path = $img_path . htmlspecialchars($product['hinh']);
-                    $linksp = "index.php?act=chitietsp&id_san_pham=" . htmlspecialchars($product['id_san_pham']);
-                    ?>
-                    <div class="group bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
-                        <a href="<?= $linksp ?>" class="block">
-                            <div class="aspect-w-1 aspect-h-1 w-full bg-gray-200 overflow-hidden">
-                                <img src="<?= $hinh_full_path ?>" alt="<?= htmlspecialchars($product['ten_san_pham']) ?>" class="object-cover w-full h-full group-hover:opacity-90 transition duration-300">
-                            </div>
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold text-gray-800 truncate"><?= htmlspecialchars($product['ten_san_pham']) ?></h3>
-                                <p class="text-sm text-gray-500 mt-2"><?= htmlspecialchars($product['mo_ta']) ?></p>
-                                <p class="text-red-500 font-bold mt-4">Giá: <?= htmlspecialchars(number_format($product['gia'])) ?> USD</p>
-                            </div>
-                        </a>
-                        <div class="p-4 flex justify-center">
-                            <a href="<?= $linksp ?>" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">Xem Chi Tiết</a>
-                        </div>
+    <h2 style="font-size: 30px; font-weight: bolder;">Flash sale</h2>
+    <br>
+    <hr>
+    <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <?php if (!empty($products)): ?>
+            <?php foreach ($products as $product): ?>
+                <?php
+                // Tạo đường dẫn hình ảnh và link sản phẩm
+                $hinh_full_path = $img_path . htmlspecialchars($product['hinh']);
+                $linksp = "index.php?act=chitietsp&id_san_pham=" . htmlspecialchars($product['id_san_pham']);
+                ?>
+                <div class="product-item card text-center">
+                    <a href="<?= $linksp ?>">
+                        <img class="card-img-top" src="<?= $hinh_full_path ?>" alt="<?= htmlspecialchars($product['ten_san_pham']) ?>">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title"><?= htmlspecialchars($product['ten_san_pham']) ?></h4>
+                        <p class="price"><?= number_format($product['gia'], 0) ?> USD</p>
+                        <form action="index.php?act=themgiohang" method="post" class="mt-3">
+                            <input type="hidden" name="id_san_pham" value="<?= $product['id_san_pham'] ?>">
+                            <input type="hidden" name="ten_san_pham" value="<?= htmlspecialchars($product['ten_san_pham']) ?>">
+                            <input type="hidden" name="hinh" value="<?= htmlspecialchars($product['hinh']) ?>">
+                            <input type="hidden" name="gia" value="<?= $product['gia'] ?>">
+                            <input type="hidden" id="soluong" name="soluong" value="1">
+                            <input type="submit" name="themgiohang" class="btn btn-primary btn-block" value="Thêm vào giỏ hàng">
+                        </form>
                     </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Không có sản phẩm nào!</p>
-            <?php endif; ?>
-        </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Không có sản phẩm nào!</p>
+        <?php endif; ?>
     </div>
+</div>
+
     <!-- New Arrival Section -->
     <div class="new-arrival">
         <h2>New Arrival</h2>
