@@ -218,6 +218,7 @@ $thanhtien = $soluong * $gia; // Phép nhân hợp lệ
                         $thongbao = 'Cập nhật tài khoản thành công';
                     }
                     include "views/suathanhcong.php";
+                    break;
                     case 'donhangcuatoi':
                         if (isset($_SESSION['ten_dang_nhap'])) {
                             $id_tai_khoan = $_SESSION['ten_dang_nhap']['id_tai_khoan']; // Lấy id tài khoản từ session

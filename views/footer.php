@@ -37,7 +37,7 @@
                 <p>Nhập email gửi hỗ trợ</p>
                 <form class="d-flex">
                     <input type="email" class="form-control me-2" placeholder="you@example.com">
-                    <button class="btn btn-outline-light">Tìm kiếm</button>
+                    <button class="btn btn-outline-light">Gửi</button>
                 </form>
 
                 <!-- Social Icons -->
