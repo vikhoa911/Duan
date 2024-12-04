@@ -6,6 +6,7 @@ include "../models/danhmuc.php";
 include "../models/taikhoan.php";
 include "../models/binhluan.php";
 include "../models/giohang.php";
+include "../models/thongke.php";
     include "header.php";
 
     if(isset($_GET['act'])){
@@ -214,6 +215,10 @@ include "../models/giohang.php";
                                         include "donhang/donhangchitiet.php";
                                         break;
                                     
+                                        case 'thongke':
+                                            include "thongke/hienthithongke.php";
+                                            break;
+                                        
             default:
                 include "home.php";
                 break;

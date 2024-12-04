@@ -211,21 +211,6 @@ function get_ttdh($thanh_toan_don_hang) {
     }
 }
 
-
-function loadall_thongke(){
-    $sql = "SELECT danhmuc.id AS madm, danhmuc.name AS tendm, 
-                   COUNT(sanpham.id) AS countsp, 
-                   MIN(sanpham.price) AS minprice, 
-                   MAX(sanpham.price) AS maxprice, 
-                   AVG(sanpham.price) AS avgprice
-            FROM sanpham 
-            LEFT JOIN danhmuc ON danhmuc.id = sanpham.iddm
-            GROUP BY danhmuc.id 
-            ORDER BY danhmuc.id DESC";
-    $list_thongke = pdo_query($sql);
-    return $list_thongke;
-}
-
 function update_don_hang($id_don_hang, $ten_don_hang, $tong_tien_don_hang) {
     $sql = "UPDATE don_hang SET ten_don_hang = ?, tong_tien_don_hang = ? WHERE id_don_hang = ?";
     pdo_execute($sql, $ten_don_hang, $tong_tien_don_hang, $id_don_hang);

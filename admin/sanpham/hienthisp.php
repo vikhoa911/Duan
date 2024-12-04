@@ -1,7 +1,7 @@
 <div class="row">
     <!-- Tiêu đề -->
-    <div class="row formcontent text-center mb-4">
-        <h1>DANH SÁCH HÀNG HÓA</h1>
+    <div class="row mb-4">
+        <h1 class="text-center text-primary mt-4">DANH SÁCH HÀNG HÓA</h1>
     </div>
 
     <!-- Form Tìm kiếm -->
@@ -29,7 +29,7 @@
     <!-- Bảng Danh sách sản phẩm -->
     <div class="row mb-3 container">
         <table class="table table-striped table-bordered text-center align-middle">
-            <thead>
+            <thead  class="table-dark">
                 <tr>
                     <th>MÃ HÀNG HÓA</th>
                     <th>TÊN HÀNG HÓA</th>

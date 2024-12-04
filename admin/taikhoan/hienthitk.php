@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="row formtitle mb-4">
-        <h1 class="text-center">DANH SÁCH TÀI KHOẢN</h1>
+<div class="row mb-4">
+        <h1 class="text-center text-primary mt-4">DANH SÁCH TÀI KHOẢN</h1>
     </div>
     <div class="row  container">
         <div class="table-responsive">
             <table class="table table-bordered table-striped text-center align-middle">
-                <thead>
+                <thead  class="table-dark">
                     <tr>
                         <th>MÃ TÀI KHOẢN</th>
                         <th>TÊN ĐĂNG NHẬP</th>

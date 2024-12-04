@@ -237,7 +237,6 @@ $thanhtien = $soluong * $gia; // Phép nhân hợp lệ
                         break;
                 
                 
-                
         default:
             include "views/home.php"; // Hiển thị trang chủ khi không có hành động nào
             break;

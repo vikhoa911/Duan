@@ -37,14 +37,6 @@
                         <a class="nav-link" href="index.php?act=khac">Phụ kiện</a>
                     </li>
                 </ul>
-                <!-- <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <form action="index.php?act=sanpham" method="post">
-                            <input type="text" class="form-control" name="kyw" placeholder="Tìm kiếm sản phẩm...">
-                            <input type="submit" class="btn btn-primary" name="timkiem" value="Tìm kiếm">
-                        </form>
-                    </li>
-                </ul> -->
                 <ul class="navbar-nav">
                     <?php
                     if (isset($_SESSION['ten_dang_nhap'])) {

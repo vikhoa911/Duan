@@ -1,13 +1,13 @@
 <div class="row">
-    <div class="row container text-center">
-        <h1>DANH SÁCH LOẠI HÀNG</h1>
+<div class="row mb-4">
+        <h1 class="text-center text-primary mt-4">DANH SÁCH DANH MỤC</h1>
         <div class="row ms-2 mb-3 text-end">
             <a href="index.php?act=themdm" class="btn btn-primary">Nhập thêm</a>
         </div>
     <div class="row container  text-center">
         <div class="ms-4 container">
             <table class="table table-striped table-bordered">
-                <thead>
+                <thead class="table-dark">
                     <tr>
                         <th>MÃ LOẠI</th>
                         <th>TÊN LOẠI</th>
