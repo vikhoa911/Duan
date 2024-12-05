@@ -81,9 +81,8 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                         $_SESSION['ten_dang_nhap'] = $checkuser;
                         header('Location:index.php');
                     } else {
-                        // Thêm thông báo lỗi với liên kết "Quên mật khẩu" và "Đăng ký"
-                        $thongbao = "Sai tài khoản hoặc mật khẩu! <br> 
-                                    <a href='index.php?act=quenmatkhau'>Quên mật khẩu?</a> ";
+                        $thongbao = "Chưa có tài khoản? <br> 
+                                    <a href='index.php?act=dangky'>Đăng ký ngay?</a> ";
                     }
                 }
                 include "views/dangnhap.php";
