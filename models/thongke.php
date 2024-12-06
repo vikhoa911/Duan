@@ -27,4 +27,18 @@ function thong_ke_san_pham_ban_chay($limit) {
             LIMIT " . intval($limit);  // Chuyển $limit thành số nguyên
     return pdo_query($sql);  // Không cần truyền tham số $limit vào pdo_query nữa
 }
-?>
+function thong_ke_doanh_thu($ngay_bat_dau = null, $ngay_ket_thuc = null) {
+    $sql = "SELECT SUM(gh.so_luong * sp.gia) AS doanh_thu
+            FROM gio_hang gh
+            INNER JOIN san_pham sp ON gh.id_san_pham = sp.id_san_pham
+            INNER JOIN don_hang dh ON gh.id_don_hang = dh.id_don_hang";
+    
+    // Nếu có ngày bắt đầu và ngày kết thúc, thêm điều kiện WHERE
+    if ($ngay_bat_dau && $ngay_ket_thuc) {
+        $sql .= " WHERE DATE(STR_TO_DATE(dh.ngay_dat_hang, '%h:%i:%s%p %d/%m/%Y')) 
+                    BETWEEN ? AND ?";
+        return pdo_query_value($sql, $ngay_bat_dau, $ngay_ket_thuc);
+    }
+    // Nếu không có ngày cụ thể, tính tổng doanh thu
+    return pdo_query_value($sql);
+}

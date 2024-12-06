@@ -3,12 +3,35 @@ $ngay = date('Y-m-d');
 $thong_ke = thong_ke_san_pham_ban_trong_ngay($ngay);
 $thong_ke_danh_muc = thong_ke_san_pham_theo_danh_muc();
 $thong_ke_ban_chay = thong_ke_san_pham_ban_chay(10);
+$doanh_thu_hom_nay = thong_ke_doanh_thu($ngay, $ngay); // Doanh thu hôm nay
+$doanh_thu_tong = thong_ke_doanh_thu(); // Tổng doanh thu
 ?>
 
 <div class="container">
     <div class="row mb-4">
-        <h1 class="text-center text-primary mt-4">Thống Kê Sản Phẩm</h1>
+    <h2 class="text-center text-primary mt-4">Thống Kê Doanh Thu</h2>
+    <div class="col-6">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title">Doanh Thu Hôm Nay</h5>
+                <p class="card-text text-primary">
+                    <?php echo number_format($doanh_thu_hom_nay ?? 0, 0, ',', '.'); ?> VNĐ
+                </p>
+            </div>
+        </div>
     </div>
+    <div class="col-6">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title">Tổng Doanh Thu</h5>
+                <p class="card-text text-success">
+                    <?php echo number_format($doanh_thu_tong ?? 0, 0, ',', '.'); ?> VNĐ
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="row">
         <h2 class="text-center mb-4">Sản Phẩm Đã Bán Trong Ngày (<?php echo $ngay; ?>)</h2>
         <div class="table-responsive">
