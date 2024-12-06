@@ -5,25 +5,19 @@ define('BASEURL','http://localhost/Duan');
 include "models/config.php";
 include "models/taikhoan.php";
 include "models/giohang.php";
-include "views/header.php"; // Đưa header vào đầu
+include "views/header.php";
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
 if (isset($_POST['cart_id'])) {
     $cart_id_to_remove = $_POST['cart_id'];
-
-    // Duyệt qua giỏ hàng và xóa sản phẩm có ID tương ứng
     foreach ($_SESSION['mycart'] as $key => $cart) {
         if ($cart[0] == $cart_id_to_remove) {
-            unset($_SESSION['mycart'][$key]); // Xóa sản phẩm khỏi giỏ hàng
-            break; // Dừng lại khi tìm thấy sản phẩm cần xóa
+            unset($_SESSION['mycart'][$key]);
+            break; 
         }
     }
-
-    // Cập nhật lại giỏ hàng sau khi xóa
     $_SESSION['mycart'] = array_values($_SESSION['mycart']);
-    
-    // Chuyển hướng lại trang giỏ hàng để cập nhật giao diện
     header("Location: index.php?act=giohang");
     exit();
 }
@@ -195,6 +189,19 @@ $thanhtien = $soluong * $gia; // Phép nhân hợp lệ
                     $thongbao = "Yêu cầu không hợp lệ.";
                 }
                 break;
+                case 'quenmatkhau':
+                    if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
+                        $email=$_POST['email'];
+                        
+                        $checkemail=checkemail($email);
+                        if(is_array($checkemail)){
+                            $thongbao="Mật khẩu của bạn là: ".$checkemail['mat_khau'];
+                        }else{
+                            $thongbao="Email không tồn tại !";
+                        }
+                    }
+                    include "views/quenmatkhau.php";
+                    break;
                 case 'suatk':
                     if(isset($_GET['id_tai_khoan']) && ($_GET['id_tai_khoan'] > 0)){
                         $tai_khoan = loadone_tai_khoan($_GET['id_tai_khoan']);  // Cập nhật tham số

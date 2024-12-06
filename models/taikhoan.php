@@ -11,7 +11,11 @@ function check_user($ten_dang_nhap, $mat_khau){
     // echo($sp);
     return $sp;
 }
-
+function checkemail($email){
+    $sql="select * from tai_khoan where email='".$email."'";
+    $sp=pdo_query_one($sql);
+    return $sp;
+}
 
 // Hàm cập nhật tài khoản
 function update_tai_khoan($id_tai_khoan, $ten_dang_nhap, $email, $dia_chi, $so_dien_thoai, $vai_tro) {

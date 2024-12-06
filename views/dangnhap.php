@@ -22,6 +22,7 @@ if (isset($_SESSION['ten_dang_nhap'])) {
                     </div>
                     <button type="submit" name="dangnhap" class="btn btn-primary w-100">Đăng nhập</button>
                     <?php if (isset($thongbao)) echo "<p class='text-danger'>$thongbao</p>"; ?>
+                    <a href="index.php?act=quenmatkhau">Quên mật khẩu ?</a>
                 </form>
             </div>
             <div class="col-md-6 ">
