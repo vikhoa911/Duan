@@ -205,4 +205,4 @@ if (isset($_GET['act'])) {
 } else {
     include "home.php";
 }
-include "footer.php"
+include "footer.php";
