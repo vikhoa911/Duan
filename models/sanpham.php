@@ -23,7 +23,7 @@ function loadall_san_pham($kyw="", $id_danh_muc=0){
         $sql .= " AND ten_san_pham LIKE '%$kyw%'";
     }
     if($id_danh_muc > 0) {
-        $sql .= " AND id_danh_muc = '$id_danh_muc'"; // Đảm bảo id_danh_muc được thêm vào câu truy vấn
+        $sql .= " AND id_danh_muc = '$id_danh_muc'";
     }
     $sql .= " ORDER BY id_san_pham DESC";
     $listsan_pham = pdo_query($sql);
@@ -83,8 +83,8 @@ function loadall_danhmuc() {
 
 
 function getProductById($id) {
-    global $conn; // Kết nối cơ sở dữ liệu
-    $sql = "SELECT * FROM sanpham WHERE id_san_pham = :id";  // Sử dụng id_san_pham thay vì id
+    global $conn;
+    $sql = "SELECT * FROM sanpham WHERE id_san_pham = :id";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     $stmt->execute();

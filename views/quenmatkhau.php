@@ -1,7 +1,6 @@
 <?php
-// Kiểm tra nếu người dùng đã đăng nhập, chuyển hướng về trang chủ
 if (isset($_SESSION['ten_dang_nhap'])) {
-    header('Location: index.php'); // Quay về trang chủ
+    header('Location: index.php');
     exit();
 }
 ?>

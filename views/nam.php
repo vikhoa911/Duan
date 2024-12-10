@@ -1,5 +1,4 @@
 <main>
-    <!-- Related Products Section -->
     <section class="related-products">
         <h2>Sản phẩm dành cho nam</h2>
         <div class="product-grid">

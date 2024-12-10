@@ -1,13 +1,8 @@
 <?php
 include_once 'models/sanpham.php';
 $img_path = "images/";
-
-// Giả sử $sanpham chứa thông tin sản phẩm hiện tại
-// Bạn cần đảm bảo $sanpham được truyền từ controller trước khi hiển thị
 $id_danh_muc = $sanpham['id_danh_muc'];
-$id_san_pham_hien_tai = $sanpham['id_san_pham']; // Lưu ID của sản phẩm hiện tại
-
-// Lấy danh sách sản phẩm thuộc cùng danh mục
+$id_san_pham_hien_tai = $sanpham['id_san_pham'];
 $products = loadall_san_pham("", $id_danh_muc);
 ?>
 

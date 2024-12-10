@@ -1,11 +1,10 @@
 <?php
 if (!isset($_SESSION['ten_dang_nhap'])) {
-    // Chưa đăng nhập, chuyển hướng đến trang đăng nhập
     header("Location: index.php?act=dangnhap");
     exit();
 }
-$listGioHang = layDanhSachGioHang(2);  // Hàm này phải trả về một chuỗi HTML
-$tongTien = tinhTongTien();           // Hàm này trả về tổng tiền
+$listGioHang = layDanhSachGioHang(2);
+$tongTien = tinhTongTien();
 ?>
 <div class="container bg-gray-100 py-10">
     <div class="container mx-auto px-4">
