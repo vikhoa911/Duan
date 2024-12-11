@@ -14,9 +14,13 @@ if (isset($_GET['act'])) {
         case 'themdm':
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $ten_danh_muc = $_POST['ten_danh_muc'];
-
+        
                 them_danh_muc($ten_danh_muc);
                 $thongbao = 'Thêm thành công';
+        
+                // Chuyển hướng đến danh sách danh mục và truyền thông báo
+                header("Location: index.php?act=hienthidm&msg=" . urlencode($thongbao));
+                exit();
             }
             include "danhmuc/themdm.php";
             break;
@@ -45,6 +49,10 @@ if (isset($_GET['act'])) {
             include "danhmuc/hienthidm.php";
             break;
         case 'hienthidm':
+            if (isset($_GET['msg'])) {
+                $thongbao = $_GET['msg'];
+            }
+        
             $listdanh_muc = loadall_danh_muc();
             include "danhmuc/hienthidm.php";
             break;
@@ -75,6 +83,9 @@ if (isset($_GET['act'])) {
             } else {
                 $kyw = '';
                 $id_danh_muc = 0;
+            }
+            if (isset($_GET['msg'])) {
+                $thongbao = $_GET['msg'];
             }
             $listdanh_muc = loadall_danh_muc();
             $listsan_pham = loadall_san_pham($kyw, $id_danh_muc);
@@ -119,6 +130,9 @@ if (isset($_GET['act'])) {
             include "sanpham/hienthisp.php";
             break;
         case 'hienthitk':
+            if (isset($_GET['msg'])) {
+                $thongbao = $_GET['msg'];
+            }
             $listtai_khoan = loadall_tai_khoan();
             include "taikhoan/hienthitk.php";
             break;
@@ -197,7 +211,10 @@ if (isset($_GET['act'])) {
         case 'thongke':
             include "thongke/hienthithongke.php";
             break;
-
+            case 'thoat':
+                session_destroy();
+                header('Location: ../index.php');
+                exit();
         default:
             include "home.php";
             break;

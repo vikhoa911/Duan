@@ -12,11 +12,11 @@ if (is_array($dm)) {
     <!-- Form cập nhật loại hàng hóa -->
     <div class="row formcontent">
         <form action="index.php?act=updatedm" method="post" class="p-4 border rounded shadow-sm">
-            <div class="row mb-3"> 
-                <label for="maloai" class="form-label">Mã loại</label>
+            <!-- <div class="row mb-3">  -->
+                <!-- <label for="maloai" class="form-label">Mã loại</label> -->
                 <!-- Mã loại không thể chỉnh sửa -->
-                <input type="text" name="maloai" id="maloai" class="form-control" value="<?php echo isset($id_danh_muc) ? $id_danh_muc : ''; ?>" disabled>
-            </div>
+                <!-- <input type="text" name="maloai" id="maloai" class="form-control" value="<?php echo isset($id_danh_muc) ? $id_danh_muc : ''; ?>" disabled> -->
+            <!-- </div> -->
 
             <div class="row mb-3">
                 <label for="ten_danh_muc" class="form-label">Tên loại</label>

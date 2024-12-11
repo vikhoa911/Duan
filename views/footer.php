@@ -1,6 +1,6 @@
-<footer class="footer bg-dark text-white py-4">
+<footer class="footer bg-dark text-white py-4 ">
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <!-- Services Section -->
             <div class="col-md-3">
                 <h5>Services</h5>

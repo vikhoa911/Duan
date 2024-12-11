@@ -1,15 +1,15 @@
 <div class="container mt-5">
     <div class="text-center mb-4">
-        <h1>THÊM MỚI LOẠI HÀNG HÓA</h1>
+        <h1 class="text-primary">THÊM MỚI LOẠI HÀNG HÓA</h1>
     </div>
     <div class="mb-4 text-end">
         <a href="index.php?act=hienthidm" class="btn btn-info">DANH SÁCH</a>
     </div>
     <form action="index.php?act=themdm" method="post" class="border p-4 rounded shadow-sm bg-light">
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label for="maloai" class="form-label">Mã loại</label>
             <input type="text" id="maloai" name="maloai" class="form-control" placeholder="Tự động tạo" disabled>
-        </div>
+        </div> -->
         <div class="mb-3">
             <label for="ten_danh_muc" class="form-label">Tên loại</label>
             <input type="text" id="ten_danh_muc" name="ten_danh_muc" class="form-control" placeholder="Nhập tên danh mục" required>

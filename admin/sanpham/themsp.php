@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="text-center mb-4">
-        <h1 class="display-6">THÊM MỚI SẢN PHẨM</h1>
+        <h1 class=" text-primary">THÊM MỚI SẢN PHẨM</h1>
     </div>
     <form action="index.php?act=themsp" method="post" enctype="multipart/form-data" class="border p-4 rounded shadow-sm bg-light">
         <div class="mb-3">

@@ -52,11 +52,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=thoat"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
                         </li>
-                        <?php if ($vai_tro == 1) { ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="admin/index.php"><i class="fas fa-user-shield"></i> Admin</a>
-                            </li>
-                        <?php } ?>
                     <?php } else { ?>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?act=dangnhap"><i class="fas fa-user"></i> Đăng nhập</a>

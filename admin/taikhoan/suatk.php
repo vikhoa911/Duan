@@ -5,7 +5,7 @@ if(is_array($taikhoan)){
 ?>
 <div class="row">
     <div class="row formtitle mb-4">
-        <h1 class="text-center">CẬP NHẬT TÀI KHOẢN</h1>
+        <h1 class="text-center text-primary">CẬP NHẬT TÀI KHOẢN</h1>
     </div>
     <div class="row formcontent formcontent1 container ">
         <form action="index.php?act=updatetk" method="post" class="container">

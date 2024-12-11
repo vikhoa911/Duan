@@ -54,21 +54,29 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             }
             include "views/dangky.php";
             break;
-        case 'dangnhap':
-            if (isset($_POST['dangnhap'])) {
-                $ten_dang_nhap = $_POST['ten_dang_nhap'];
-                $mat_khau = $_POST['mat_khau'];
-                $checkuser = check_user($ten_dang_nhap, $mat_khau);
-                if (is_array($checkuser)) {
-                    $_SESSION['ten_dang_nhap'] = $checkuser;
-                    header('Location: index.php');
-                    exit();
-                } else {
-                    $thongbao = "Chưa có tài khoản? <br> <a href='index.php?act=dangky'>Đăng ký ngay?</a>";
+            case 'dangnhap':
+                if (isset($_POST['dangnhap'])) {
+                    $ten_dang_nhap = $_POST['ten_dang_nhap'];
+                    $mat_khau = $_POST['mat_khau'];
+                    $checkuser = check_user($ten_dang_nhap, $mat_khau);
+            
+                    if (is_array($checkuser)) {
+                        $_SESSION['ten_dang_nhap'] = $checkuser;
+            
+                        // Kiểm tra vai trò
+                        if ($checkuser['vai_tro'] == 1) {
+                            header('Location: admin/index.php');
+                        } else {
+                            header('Location: index.php');
+                        }
+                        exit();
+                    } else {
+                        $thongbao = "Chưa có tài khoản? <br> <a href='index.php?act=dangky'>Đăng ký ngay?</a>";
+                    }
                 }
-            }
-            include "views/dangnhap.php";
-            break;
+                include "views/dangnhap.php";
+                break;
+            
         case 'home2':
             include "views/home2.php";
             break;
@@ -190,15 +198,22 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             }
             include "views/suathanhcong.php";
             break;
-        case 'donhangcuatoi':
-            if (isset($_SESSION['ten_dang_nhap'])) {
-                $id_tai_khoan = $_SESSION['ten_dang_nhap']['id_tai_khoan'];
-            }
-            $listdon_hang = loadall_don_hang_kh( $id_tai_khoan);
-            include "views/donhangcuatoi.php";
-            break;
-
-
+            case 'donhangcuatoi':
+                if (isset($_SESSION['ten_dang_nhap'])) {
+                    $id_tai_khoan = $_SESSION['ten_dang_nhap']['id_tai_khoan'];
+                }
+                $listdon_hang = loadall_don_hang_kh($id_tai_khoan);
+                include "views/donhangcuatoi.php";
+                break;
+            
+            case 'donhangchitiet':
+                if (isset($_GET['id_don_hang']) && ($_GET['id_don_hang'] > 0)) {
+                    $don_hang = loadone_don_hang($_GET['id_don_hang']);
+                    $chitiet_don_hang = loadall_chitiet_don_hang($_GET['id_don_hang']);
+                }
+                include "views/donhangchitiet.php";
+                break;
+            
         default:
             include "views/home.php";
             break;

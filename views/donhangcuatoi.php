@@ -1,7 +1,7 @@
 <div class="container my-5">
+<h3 class="text-center mb-5">ĐƠN HÀNG CỦA TÔI</h3>
     <div class="row">
-        <div class="col-12">
-            <h1 class="text-center mb-5">ĐƠN HÀNG CỦA TÔI</h1>
+        <div class="col-12 mb-5">
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center">
                     <thead class="thead-dark">
@@ -11,6 +11,7 @@
                             <th scope="col">SỐ LƯỢNG MẶT HÀNG</th>
                             <th scope="col">TỔNG GIÁ TRỊ ĐƠN HÀNG</th>
                             <th scope="col">TÌNH TRẠNG ĐƠN HÀNG</th>
+                            <th scope="col">HÀNH ĐỘNG</th> <!-- Cột hành động -->
                         </tr>
                     </thead>
                     <tbody>
@@ -26,10 +27,13 @@
                                     <td>' . (isset($countsp) ? htmlspecialchars($countsp) : 'N/A') . '</td>
                                     <td><strong>' . number_format($don_hang['tong_tien_don_hang'], 0, ',', '.') . ' USD</strong></td>
                                     <td>' . htmlspecialchars($ttdh) . '</td>
+                                    <td>
+                                        <a href="index.php?act=donhangchitiet&id_don_hang=' . $don_hang['id_don_hang'] . '" class="btn btn-info">Xem chi tiết</a>
+                                    </td> <!-- Nút xem chi tiết -->
                                 </tr>';
                             }
                         } else {
-                            echo '<tr><td colspan="5" class="text-danger">Bạn chưa có đơn hàng nào.</td></tr>';
+                            echo '<tr><td colspan="6" class="text-danger">Bạn chưa có đơn hàng nào.</td></tr>';
                         }
                         ?>
                     </tbody>

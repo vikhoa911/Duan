@@ -23,7 +23,6 @@
                     <tbody>
                         <?php foreach ($listdon_hang as $don_hang) {
                             extract($don_hang);
-                            $suadonhang = "index.php?act=suadonhang&id_don_hang=" . $don_hang['id_don_hang'];
                             $xemdonhang = "index.php?act=xemdonhang&id_don_hang=" . $don_hang['id_don_hang'];
                             $kh = $don_hang["ten_don_hang"] . '
                                 <br>' . $don_hang["email_don_hang"] . 'w
@@ -39,8 +38,7 @@
                                 <td>' . $ttdh . '</td>
                                 <td>' . $don_hang["ngay_dat_hang"] . '</td>
                                 <td>
-                                    <a href="' . $suadonhang . '" class="btn btn-warning btn-sm">Sửa</a>
-                                    <a href="' . $xemdonhang . '" class="btn btn-info btn-sm">Xem</a>
+                                    <a href="' . $xemdonhang . '" class="btn btn-info btn-sm mt-4">Xem</a>
                                 </td>
                             </tr>';
                         } ?>

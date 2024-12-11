@@ -5,7 +5,7 @@ $tongTien = tinhTongTien();
 
 <div class="container mx-auto px-4 py-6">
     <!-- Cart Table -->
-    <div class="overflow-hidden border rounded-lg shadow-sm bg-light">
+    <div class="overflow-hidden border rounded-lg shadow-sm bg-light  mb-5">
         <table class="w-full text-left border-collapse">
             <?php echo $listGioHang; // Hiển thị danh sách giỏ hàng 
             ?>
@@ -13,9 +13,9 @@ $tongTien = tinhTongTien();
     </div>
 
     <!-- Cart Totals -->
-    <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 mb-5">
         <div></div>
-        <div class="border rounded-lg bg-light p-6 shadow-sm">
+        <div class="border rounded-lg bg-light p-6 shadow-sm  mb-5">
             <h2 class="text-xl font-bold mb-4">Tổng đơn hàng</h2>
             <div class="space-y-4">
                 <div class="flex justify-between items-center">

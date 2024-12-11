@@ -2,6 +2,13 @@
 <div class="row mb-4">
         <h1 class="text-center text-primary mt-4">DANH SÁCH TÀI KHOẢN</h1>
     </div>
+    <div class="container">
+                <?php
+                if (isset($thongbao) && ($thongbao != '')) {
+                    echo '<div class="alert alert-success mt-3 text-center">' . $thongbao . '</div>';
+                }
+                ?>
+            </div>
     <div class="row  container">
         <div class="table-responsive">
             <table class="table table-bordered table-striped text-center align-middle">
@@ -21,7 +28,6 @@
                         <?php
                             extract($taikhoan);
                             $suatk = "index.php?act=suatk&id_tai_khoan=" . $id_tai_khoan;
-                            $xoatk = "index.php?act=xoatk&id_tai_khoan=" . $id_tai_khoan;
                             $vai_tro_hien_thi = $vai_tro == 1 ? 'Quản trị viên' : 'Người dùng';
                             $dia_chi = !empty($dia_chi) ? $dia_chi : 'Chưa cập nhật';
                             $so_dien_thoai = !empty($so_dien_thoai) ? $so_dien_thoai : 'Chưa cập nhật';
@@ -35,7 +41,6 @@
                             <td><?= $vai_tro_hien_thi ?></td>
                             <td>
                                 <a href="<?= $suatk ?>" class="btn btn-warning btn-sm me-2">Sửa</a>
-                                <a href="<?= $xoatk ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa tài khoản này không?')">Xóa</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

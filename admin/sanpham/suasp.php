@@ -13,7 +13,7 @@
 
 <div class="container mt-5">
     <div class="row formcontent mb-4">
-        <h1 class="text-center">CẬP NHẬT SẢN PHẨM</h1>
+        <h1 class="text-center text-primary">CẬP NHẬT SẢN PHẨM</h1>
     </div>
     
     <div class="row container">

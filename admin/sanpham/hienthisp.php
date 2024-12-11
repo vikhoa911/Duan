@@ -61,7 +61,7 @@
                         <td>' . number_format($gia, 0, ',', '.') . ' USD</td>
                         <td>
                             <a href="' . $suasp . '" class="btn btn-warning btn-sm">Sửa</a>
-                            <a href="' . $xoasp . '" class="btn btn-danger btn-sm ms-2">Xóa</a>
+                            <a href="' . $xoasp . '" class="btn btn-danger btn-sm ms-2"  onclick="return confirm(\'Bạn có chắc chắn muốn xóa sản phẩm này không?\')">Xóa</a>
                         </td>
                     </tr>
                     ';
