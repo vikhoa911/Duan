@@ -142,15 +142,15 @@ function loadall_don_hang($kyw = "", $id_tai_khoan = 0)
     $list_don_hang = pdo_query($sql);
     return $list_don_hang;
 }
-function loadall_don_hang_kh($kyw = "", $id_tai_khoan = 0)
+function loadall_don_hang_kh($id_tai_khoan = 0)
 {
     $sql = "SELECT * FROM don_hang WHERE 1";
     if ($id_tai_khoan > 0) $sql .= " AND id_tai_khoan = " . $id_tai_khoan;
-    if ($kyw != "") $sql .= " AND id_don_hang LIKE '%" . $kyw . "%'";
     $sql .= " ORDER BY id_don_hang DESC";
     $list_don_hang = pdo_query($sql);
     return $list_don_hang;
 }
+
 
 function don_hang_chi_tiet($list_gio_hang)
 {

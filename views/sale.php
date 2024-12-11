@@ -1,7 +1,7 @@
 <main>
     <!-- Related Products Section -->
     <section class="related-products">
-        <h2>Sản phẩm khác</h2>
+        <h2>Sản phẩm sale</h2>
         <div class="product-grid">
             <?php
             include 'models/sanpham.php';

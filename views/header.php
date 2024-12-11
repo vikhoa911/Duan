@@ -30,7 +30,7 @@
                         <a class="nav-link" href="index.php?act=nu">Đồ Nữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?act=khac">Phụ kiện</a>
+                        <a class="nav-link" href="index.php?act=sale">Sale</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">

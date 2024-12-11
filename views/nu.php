@@ -1,6 +1,6 @@
 <main>
     <section class="related-products">
-        <h2>Sản phẩm dành cho nam</h2>
+        <h2>Sản phẩm dành cho nữ</h2>
         <div class="product-grid">
             <?php
             include 'models/sanpham.php';

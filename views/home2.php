@@ -5,7 +5,7 @@ include 'models/sanpham.php';
 $img_path = "images/";
 
 // Giả sử id_danh_muc của danh mục "nam" là 1
-$id_danh_muc = 1;
+$id_danh_muc = 3;
 
 // Lấy danh sách sản phẩm thuộc danh mục có id_danh_muc = 1
 $products = loadall_san_pham("", $id_danh_muc);
@@ -70,7 +70,7 @@ $products = loadall_san_pham("", $id_danh_muc);
                 <img src="images/shopnam.jpg" alt="Man's Collection" class="absolute inset-0 w-full h-full object-cover">
                 <div class="relative text-center bg-black bg-opacity-50 p-4 rounded">
                     <h2 class="text-2xl font-bold text-white">Man's Collection</h2>
-                    <button class="mt-2 px-4 py-2 bg-white text-black rounded">Shop Now</button>
+                    <button class="mt-2 px-4 py-2 bg-white text-black rounded"><a href="index.php?act=nam">Shop Now</a></button>
                 </div>
             </div>
             <!-- Ba cột nhỏ bên phải -->
@@ -80,7 +80,7 @@ $products = loadall_san_pham("", $id_danh_muc);
                     <img src="images/shopnu.png" alt="Man's Collection" class="absolute inset-0 w-full h-full object-cover">
                     <div class="relative text-center bg-black bg-opacity-50 p-4 rounded">
                         <h2 class="text-2xl font-bold text-white">Women's Collection</h2>
-                        <button class="mt-2 px-4 py-2 bg-white text-black rounded">Shop Now</button>
+                        <button class="mt-2 px-4 py-2 bg-white text-black rounded"><a href="index.php?act=nu">Shop Now</a></button>
                     </div>
                 </div>
                 <!-- Hai hàng nhỏ -->

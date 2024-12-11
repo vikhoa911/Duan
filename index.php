@@ -88,8 +88,8 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             include "views/nu.php";
             break;
 
-        case 'khac':
-            include "views/khac.php";
+        case 'sale':
+            include "views/sale.php";
             break;
 
         case 'chitietsp':
@@ -199,6 +199,7 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             include "views/suathanhcong.php";
             break;
             case 'donhangcuatoi':
+                
                 if (isset($_SESSION['ten_dang_nhap'])) {
                     $id_tai_khoan = $_SESSION['ten_dang_nhap']['id_tai_khoan'];
                 }
