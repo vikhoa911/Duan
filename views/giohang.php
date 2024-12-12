@@ -13,9 +13,9 @@ $tongTien = tinhTongTien();
     </div>
 
     <!-- Cart Totals -->
-    <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 mb-5">
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div></div>
-        <div class="border rounded-lg bg-light p-6 shadow-sm  mb-5">
+        <div class="border rounded-lg bg-light p-6 shadow-sm">
             <h2 class="text-xl font-bold mb-4">Tổng đơn hàng</h2>
             <div class="space-y-4">
                 <div class="flex justify-between items-center">
@@ -35,6 +35,9 @@ $tongTien = tinhTongTien();
             </div>
         </div>
     </div>
+</div>
+<div class="mb-5">
+<br>
 </div>
 <div class="mb-5">
 <br>
