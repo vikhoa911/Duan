@@ -1,9 +1,9 @@
 <div class="container my-5">
 <h3 class="text-center mb-5">ĐƠN HÀNG CỦA TÔI</h3>
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-12 mb-5">
             <div class="table-responsive">
-                <table class="table table-bordered table-hover text-center">
+                <table class="table table-bordered table-hover text-center mb-5">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">MÃ ĐƠN HÀNG</th>
@@ -41,4 +41,7 @@
             </div>
         </div>
     </div>
+</div>
+<div class="mb-5">
+<br>
 </div>
