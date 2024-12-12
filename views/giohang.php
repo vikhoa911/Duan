@@ -22,9 +22,16 @@ $tongTien = tinhTongTien();
                     <span class="font-bold">Tổng tiền</span>
                     <span class="total-price text-lg font-bold"><?php echo number_format($tongTien, 0, ',', '.'); ?> USD</span>
                 </div>
-                <a href="index.php?act=thanhtoan">
+                <?php 
+                if ($tongTien>0) {
+                    echo '<a href="index.php?act=thanhtoan">
                     <input class="w-full mt-4 bg-black text-white py-3 rounded-lg hover:bg-gray-800" type="button" value="TIẾP TỤC ĐẶT HÀNG">
-                </a>
+                </a>';
+                }
+                else {
+                    echo '<p class="text-center text-danger">Giỏ hàng của bạn đang trống</p>';
+                }
+                ?>
             </div>
         </div>
     </div>
